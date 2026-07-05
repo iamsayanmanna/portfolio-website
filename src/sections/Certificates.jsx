@@ -3,6 +3,8 @@ import sihCertificate from "../assets/sih-certificate.png";
 import aimlCertificate from "../assets/aiml-internship.png";
 import rpaCertificate from "../assets/rpa-certificate.png";
 import agcCertificate from "../assets/agc-certificate.png";
+import { useState } from "react";
+import { Eye, X } from "lucide-react";
 
 const certificates = [
   {
@@ -35,6 +37,9 @@ const certificates = [
 ];
 
 function Certificates() {
+
+  const [selectedCertificate, setSelectedCertificate] = useState(null);
+
   return (
     <section
       id="certificates"
@@ -78,6 +83,7 @@ function Certificates() {
       }}
       viewport={{ once: true }}
       className="
+      group
       bg-white/5
       border
       border-white/10
@@ -94,19 +100,50 @@ function Certificates() {
       "
     >
 
-      <img
-  src={cert.image}
-  alt={cert.title}
-  className="
-    w-full
-    h-48
-    object-cover
-    rounded-2xl
-    mb-6
-    border
-    border-white/10
-  "
-/>
+      <div className="relative mb-6 overflow-hidden rounded-2xl border border-white/10">
+
+  <img
+    src={cert.image}
+    alt={cert.title}
+    className="
+      w-full
+      h-48
+      object-cover
+      transition-transform
+      duration-500
+      group-hover:scale-110
+    "
+  />
+
+  <div
+  onClick={() => setSelectedCertificate(cert)}
+    className="
+      absolute
+      inset-0
+      bg-black/60
+      backdrop-blur-sm
+      opacity-0
+      group-hover:opacity-100
+      transition-all
+      duration-500
+      flex
+      items-center
+      justify-center
+      flex-col
+    "
+  >
+    <Eye
+      size={42}
+      className="text-white mb-2"
+    />
+
+    <span className="text-white font-semibold">
+      View Certificate
+    </span>
+
+  </div>
+
+</div>
 
       <h3 className="text-2xl font-bold mb-4">
         {cert.title}
@@ -127,6 +164,72 @@ function Certificates() {
 </div>
 
       </div>
+
+      {selectedCertificate && (
+
+  <div
+    className="
+      fixed
+      inset-0
+      z-[999]
+      bg-black/80
+      backdrop-blur-md
+      flex
+      items-center
+      justify-center
+      p-6
+    "
+    onClick={() => setSelectedCertificate(null)}
+  >
+
+    <div
+      className="relative flex justify-center items-center"
+      onClick={(e) => e.stopPropagation()}
+    >
+
+      <button
+        onClick={() => setSelectedCertificate(null)}
+        className="
+          absolute
+          -top-5
+          -right-5
+          w-12
+          h-12
+          rounded-full
+          bg-white/10
+          hover:bg-red-500
+          transition-all
+          duration-300
+          flex
+          items-center
+          justify-center
+        "
+      >
+        <X size={26} />
+      </button>
+
+      <img
+  src={selectedCertificate.image}
+  alt={selectedCertificate.title}
+  className="
+    max-w-[900px]
+    w-full
+    max-h-[85vh]
+    h-auto
+    object-contain
+    rounded-3xl
+    border
+    border-white/20
+    shadow-2xl
+  "
+/>
+
+    </div>
+
+  </div>
+
+)}
+
     </section>
   );
 }

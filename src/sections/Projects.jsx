@@ -1,12 +1,19 @@
 import { motion } from "framer-motion";
 import { Code2, BrainCircuit, Database, ArrowUpRight } from "lucide-react";
 
+import hangmanImg from "../assets/projects/hangman.png";
+import stockImg from "../assets/projects/stock.png";
+import emailImg from "../assets/projects/email.png";
+
 const projects = [
   {
     title: "Hangman Game",
     description:
       "A professional Python-based Hangman game with ASCII visuals, lives system, score tracking and replay functionality.",
-    link: "https://github.com/heysayanmanna",
+
+    image: hangmanImg,  
+
+    link: "https://github.com/iamsayanmanna/CodeAlpha_Hangman_Game.git",
     icon: <Code2 size={80} />,
   },
 
@@ -14,7 +21,9 @@ const projects = [
     title: "Stock Portfolio Tracker",
     description:
       "A Python automation tool that tracks stock investments, analyzes portfolio performance and calculates returns efficiently.",
-    link: "https://github.com/heysayanmanna",
+      
+    image: stockImg,
+    link: "https://github.com/iamsayanmanna/CodeAlpha_Stock_Portfolio_Tracker.git",
     icon: <Database size={80} />,
   },
 
@@ -22,7 +31,8 @@ const projects = [
     title: "Email Extractor Tool",
     description:
       "An automation utility built with Python and Regex that extracts, filters and validates unique email addresses.",
-    link: "https://github.com/heysayanmanna",
+    image: emailImg,
+    link: "https://github.com/iamsayanmanna/CodeAlpha_Email_Extractor.git",
     icon: <BrainCircuit size={80} />,
   },
 ];
@@ -120,36 +130,28 @@ hover:scale-[1.03]
               <div className="project-top-line"></div>
 
               {/* Preview Area */}
-              <div
-                className="
-                h-56
-                flex
-                items-center
-                justify-center
-                bg-gradient-to-br
-                from-blue-500/20
-                via-blue-500/10
-                to-purple-500/20
-                border-b
-                border-white/10
-                "
-              >
-                <motion.div
-                  className="opacity-90"
-                  animate={{
-                    y: [0, -12, 0],
-                  }}
-                  transition={{
-                    duration: 3,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                  }}
-                >
-                  <div className="project-icon group-hover:scale-110 transition duration-500">
-                    {project.icon}
-                  </div>
-                </motion.div>
-              </div>
+             {/* Project Thumbnail */}
+
+<div className="relative h-56 overflow-hidden border-b border-white/10">
+
+  <img
+    src={project.image}
+    alt={project.title}
+    className="
+      w-full
+      h-full
+      object-cover
+      transition-all
+      duration-500
+      group-hover:scale-110
+    "
+  />
+
+  {/* Dark Overlay */}
+
+  <div className="absolute inset-0 bg-gradient-to-t from-[#0b1020] via-transparent to-transparent"></div>
+
+</div>
 
               {/* Content */}
               <div className="p-8 flex flex-col flex-1 min-h-[220px]">
@@ -175,35 +177,72 @@ mb-8
                   {project.description}
                 </p>
 
-                <div className="mt-auto">
+                <div className="mt-auto flex gap-3">
 
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="
-                    inline-flex
-                    items-center
-                    gap-2
-                    px-7
-                    py-4
-                    text-lg
-                    rounded-xl
-                    bg-gradient-to-r
-                    from-blue-500
-                    to-purple-500
-                    text-white
-                    font-semibold
-                    hover:scale-105
-                    transition-all
-                    duration-300
-                    "
-                  >
-                    View Project
-                    <ArrowUpRight size={18} />
-                  </a>
+  {/* GitHub */}
 
-                </div>
+  <a
+    href={project.github}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="
+      flex-1
+      text-center
+      py-3
+      rounded-xl
+      border
+      border-white/10
+      bg-white/5
+      hover:bg-white/10
+      transition-all
+      duration-300
+      font-semibold
+    "
+  >
+    GitHub
+  </a>
+
+  {/* Live / Source */}
+
+  {project.live ? (
+    <a
+      href={project.live}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="
+        flex-1
+        text-center
+        py-3
+        rounded-xl
+        bg-gradient-to-r
+        from-blue-500
+        to-purple-500
+        font-semibold
+        text-white
+        hover:scale-105
+        transition-all
+      "
+    >
+      Live Demo
+    </a>
+  ) : (
+    <button
+      disabled
+      className="
+        flex-1
+        py-3
+        rounded-xl
+        bg-gray-700/40
+        text-gray-400
+        cursor-not-allowed
+        font-semibold
+      "
+    >
+      Source Only
+    </button>
+  )}
+
+</div>
 
               </div>
 

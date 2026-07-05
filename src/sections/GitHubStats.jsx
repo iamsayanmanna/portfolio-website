@@ -43,7 +43,7 @@ function GitHubStats() {
     "
   >
     <img
-      src="https://github-readme-stats.vercel.app/api?username=heysayanmanna&show_icons=true&theme=tokyonight&hide_border=true"
+      src="https://github-readme-stats-sigma-five.vercel.app/api?username=iamsayanmanna&show_icons=true&theme=tokyonight&hide_border=true"
       alt="GitHub Stats"
       className="w-full rounded-2xl"
     />
@@ -60,7 +60,7 @@ function GitHubStats() {
     "
   >
     <img
-      src="https://github-readme-stats.vercel.app/api/top-langs/?username=heysayanmanna&layout=compact&theme=tokyonight&hide_border=true"
+      src="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=iamsayanmanna&layout=compact&theme=tokyonight&hide_border=true"
       alt="Top Languages"
       className="w-full rounded-2xl"
     />

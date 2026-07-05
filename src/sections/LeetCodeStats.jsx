@@ -1,4 +1,16 @@
+import { useEffect, useState } from "react";
+
 function LeetCodeStats() {
+
+  const [stats, setStats] = useState(null);
+
+  useEffect(() => {
+    fetch("https://alfa-leetcode-api.onrender.com/userProfile/iamsayanmanna")
+      .then((res) => res.json())
+      .then((data) => setStats(data))
+      .catch((err) => console.log(err));
+  }, []);
+
   return (
     <section
       id="leetcode"
@@ -21,51 +33,26 @@ function LeetCodeStats() {
         </div>
 
         <div
-  className="
-  max-w-[900px]
-  mx-auto
-  bg-white/5
-  border
-  border-white/10
-  rounded-3xl
-  p-12
-  backdrop-blur-xl
-  text-center
-  "
->
+          className="
+          max-w-[900px]
+          mx-auto
+          bg-white/5
+          border
+          border-white/10
+          rounded-3xl
+          p-12
+          backdrop-blur-xl
+          text-center
+          "
+        >
 
-  <div className="text-7xl mb-6">
-    ⚡
-  </div>
+          <img
+  src="https://leetcard.jacoblin.cool/iamsayanmanna?theme=dark&font=Karma&ext=heatmap"
+  alt="LeetCode Stats"
+  className="w-full rounded-2xl"
+/>
 
-  <h3 className="text-4xl font-bold mb-4">
-    LeetCode Journey Coming Soon
-  </h3>
-
-  <p className="text-gray-400 text-xl leading-8 max-w-[600px] mx-auto">
-    Currently focusing on academic studies, projects and development.
-    Competitive programming progress and LeetCode statistics will be
-    added here in the future.
-  </p>
-
-  <div className="mt-8">
-    <span
-      className="
-      px-6
-      py-3
-      rounded-full
-      bg-yellow-500/10
-      border
-      border-yellow-500/20
-      text-yellow-400
-      font-semibold
-      "
-    >
-      Coming Soon 🚀
-    </span>
-  </div>
-
-</div>
+        </div>
 
       </div>
     </section>
