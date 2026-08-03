@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 import {
   HiOutlineMapPin,
   HiOutlineAcademicCap,
+  HiOutlineUserCircle,
+HiOutlineSparkles,
   HiOutlineBriefcase,
   HiOutlineBolt,
   HiOutlineMoon,
@@ -12,8 +14,9 @@ function About() {
   return (
     <section
       id="about"
-      className="py-20 md:py-28 lg:py-32 pt-2 pb-12 px-4 sm:px-6"
-      style={{ marginBottom: "2rem" }}
+      className="pt-10 lg:pt-14 pb-6 px-4 sm:px-6"
+
+     
     >
 
       {/* Animated Background Particles */}
@@ -30,8 +33,8 @@ function About() {
 
       <div
         style={{
-          width: "95%",
-          maxWidth: "1400px",
+          width: "100%",
+          maxWidth: "1200px",
           margin: "0 auto",
         }}
       >
@@ -46,12 +49,20 @@ function About() {
           viewport={{ once: true }}
           className="text-center"
         >
-          <p className="text-gray-400 mb-4 text-sm tracking-widest uppercase">
-            Get To Know More
-          </p>
+          <p className="text-[#4285F4] font-semibold tracking-[0.25em] uppercase text-sm mb-4">
+  GET TO KNOW ME
+</p>
 
           <motion.h2
-  className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight gradient-text"
+  className="
+text-5xl
+sm:text-6xl
+lg:text-7xl
+font-black
+tracking-[-0.04em]
+leading-none
+text-gray-900
+"
   animate={{
     textShadow: [
       "0 0 0px rgba(59,130,246,0)",
@@ -64,14 +75,19 @@ function About() {
     repeat: Infinity,
   }}
 >
-  About Me
+  <>
+  About{" "}
+  <span className="bg-gradient-to-r from-[#4285F4] via-[#EA4335] to-[#34A853] bg-clip-text text-transparent">
+    Me
+  </span>
+</>
 </motion.h2>
 
-          <div className="mt-6 mx-auto w-24 h-1 rounded-full bg-gradient-to-r from-blue-500 to-purple-500"></div>
+         <div className="mt-6 mx-auto w-28 h-1 rounded-full bg-gradient-to-r from-[#4285F4] via-[#FBBC05] to-[#34A853]"></div>
         </motion.div>
 
         {/* Extra Gap */}
-        <div style={{ height: "5rem" }}></div>
+        <div className="h-12"></div>
 
         {/* Cards */}
         <div
@@ -80,9 +96,23 @@ function About() {
           {/* Who Am I */}
           <motion.div
             style={{
-              padding: "2rem",
+              padding: "2.5rem",
             }}
-            className="about-card-left relative bg-white/5 border border-white/10 rounded-3xl backdrop-blur-xl hover:bg-white/10 hover:border-blue-400/50 hover:shadow-[0_0_50px_rgba(59,130,246,0.35)] hover:-translate-y-2 transition-all duration-500"
+            className="
+about-card-left
+relative
+bg-white
+border
+border-gray-200
+rounded-3xl
+shadow-[0_10px_30px_rgba(17,24,39,.05)]
+hover:border-[#4285F4]/30
+hover:shadow-[0_20px_60px_rgba(66,133,244,.12)]
+hover:-translate-y-2
+transition-all
+duration-500
+hover:scale-[1.02]
+"
             initial={{ opacity: 0, x: -60, scale: 0.95 }}
             whileInView={{ opacity: 1, x: 0, scale: 1 }}
             transition={{
@@ -91,11 +121,11 @@ function About() {
             }}
             viewport={{ once: true }}
           >
-            <div className="absolute -inset-1 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-3xl blur-xl opacity-0 hover:opacity-100 transition duration-500 -z-10"></div>
+            
 
             <div className="flex items-center gap-3 mb-8">
               <motion.div
-  className="w-1 h-8 rounded-full bg-gradient-to-b from-blue-500 to-purple-500"
+  className="w-1 h-8 rounded-full bg-gradient-to-b from-[#4285F4] via-[#FBBC05] to-[#34A853]"
   animate={{
     scaleY: [1, 1.3, 1],
   }}
@@ -105,48 +135,45 @@ function About() {
   }}
 ></motion.div>
 
-              <h3 className="text-4xl font-bold">
-                Who Am I?
-              </h3>
+              <div className="flex items-center gap-3">
+  <HiOutlineUserCircle className="text-[#4285F4] text-3xl" />
+
+  <h3 className="text-3xl md:text-4xl font-extrabold text-gray-900">
+    Who Am I?
+  </h3>
+</div>
             </div>
 
             <p
               style={{
-                color: "#e2e8f0",
+                color:"#4b5563",
                 lineHeight: "2",
                 marginBottom: "1.5rem",
               }}
               className="text-base sm:text-lg md:text-xl"
             >
-              I'm Sayan Manna, a passionate developer focused on building
-              modern, scalable and user-friendly digital experiences.
-              I enjoy creating real-world projects involving Python,
-              automation, frontend development and modern web technologies.
+              I'm Sayan Manna, a passionate Full Stack Developer and BCA student who enjoys building modern, scalable, and user-centric software. My core expertise includes Java, Python, React, Node.js, MongoDB, and AI-powered applications.
             </p>
 
             <p
               style={{
-                color: "#e2e8f0",
+                color:"#4b5563",
                 lineHeight: "2",
                 marginBottom: "1.5rem",
               }}
               className="text-base sm:text-lg md:text-xl"
             >
-              My goal is to continuously improve my technical skills,
-              build impactful software products and create digital
-              solutions that solve real-world problems.
+              I enjoy transforming ideas into high-quality digital products by combining clean architecture, intuitive UI, and efficient backend systems. I continuously explore new technologies and best engineering practices.
             </p>
 
             <p
               style={{
-                color: "#e2e8f0",
+                color:"#4b5563",
                 lineHeight: "2",
               }}
               className="text-base sm:text-lg md:text-xl"
             >
-              I enjoy learning new technologies, building practical software
-              solutions and improving my problem-solving skills through
-              real-world projects and continuous learning.
+              My focus is on creating impactful software, solving real-world problems, contributing to open source, and continuously growing as a software engineer.
             </p>
 
             {/* Info Tags */}
@@ -162,11 +189,11 @@ function About() {
   href="https://www.google.co.in/maps/place/124%2F7,+Kumor+Para,+Purba+Barisha,+Kolkata,+West+Bengal+700008/@22.4783287,88.3197897,19z/data=!3m1!4b1!4m6!3m5!1s0x3a027a79be578cdb:0x7df43ce9307e40db!8m2!3d22.4783287!4d88.3204334!16s%2Fg%2F11x6rk8xl7?entry=ttu&g_ep=EgoyMDI2MDYxMC4wIKXMDSoASAFQAw%3D%3D"
   target="_blank"
   rel="noopener noreferrer"
-  className="about-tag location-tag flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 border border-white/10 text-base text-gray-300"
+  className="about-tag location-tag flex items-center gap-2 px-4 py-2 rounded-xl bg-white border border-gray-200 hover:bg-blue-50 text-base text-gray-700 shadow-sm hover:bg-blue-50"
 >
   <>
   <HiOutlineMapPin className="text-red-400 text-lg" />
-  West Bengal, India
+   Kolkata, India
 </>
 </a>
 
@@ -174,11 +201,11 @@ function About() {
   href="https://bhawanipurglobal.edu.in/"
   target="_blank"
   rel="noopener noreferrer"
-  className="about-tag college-tag flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 border border-white/10 text-base text-gray-300"
+  className="about-tag college-tag flex items-center gap-2 px-4 py-2 rounded-xl bg-white border border-gray-200 hover:bg-blue-50 text-base text-gray-700 shadow-sm hover:bg-purple-50"
 >
   <>
   <HiOutlineAcademicCap className="text-purple-400 text-lg" />
-  BCA Student
+   BCA • Computer Science
 </>
 </a>
 
@@ -186,11 +213,11 @@ function About() {
   href="https://www.linkedin.com/in/iamsayanmanna/"
   target="_blank"
   rel="noopener noreferrer"
-  className="about-tag linkedin-tag flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 border border-white/10 text-base text-gray-300"
+  className="about-tag linkedin-tag flex items-center gap-2 px-4 py-2 rounded-xl bg-white border border-gray-200 hover:bg-blue-50 text-base text-gray-700 shadow-sm hover:bg-green-50"
 >
   <>
   <HiOutlineBriefcase className="text-green-400 text-lg" />
-  Open to Work
+  Open to Internship
 </>
 </a>
             </div>
@@ -199,9 +226,22 @@ function About() {
           {/* My Goal */}
           <motion.div
             style={{
-              padding: "2rem",
+              padding: "2.5rem",
             }}
-            className="about-card-right relative bg-white/5 border border-white/10 rounded-3xl backdrop-blur-xl hover:bg-white/10 hover:border-purple-400/50 hover:shadow-[0_0_50px_rgba(168,85,247,0.35)] hover:-translate-y-2 transition-all duration-500"
+            className="
+about-card-right
+relative
+bg-white
+border
+border-gray-200
+rounded-3xl
+shadow-[0_10px_30px_rgba(17,24,39,.05)]
+hover:border-[#34A853]/30
+hover:shadow-[0_20px_60px_rgba(52,168,83,.12)]
+hover:-translate-y-2
+transition-all
+duration-500
+hover:scale-[1.02]"
             initial={{ opacity: 0, x: 60, scale: 0.95 }}
             whileInView={{ opacity: 1, x: 0, scale: 1 }}
             transition={{
@@ -210,11 +250,11 @@ function About() {
             }}
             viewport={{ once: true }}
           >
-            <div className="absolute -inset-1 bg-gradient-to-r from-purple-500/10 to-blue-500/10 rounded-3xl blur-xl opacity-0 hover:opacity-100 transition duration-500 -z-10"></div>
+            
 
             <div className="flex items-center gap-3 mb-8">
               <motion.div
-  className="w-1 h-8 rounded-full bg-gradient-to-b from-blue-500 to-purple-500"
+  className="w-1 h-8 rounded-full bg-gradient-to-b from-[#4285F4] via-[#FBBC05] to-[#34A853]"
   animate={{
     scaleY: [1, 1.3, 1],
   }}
@@ -224,48 +264,45 @@ function About() {
   }}
 ></motion.div>
 
-              <h3 className="text-4xl font-bold">
-                My Goal
-              </h3>
+              <div className="flex items-center gap-3">
+  <HiOutlineSparkles className="text-[#34A853] text-3xl" />
+
+  <h3 className="text-3xl md:text-4xl font-extrabold text-gray-900">
+    My Goal
+  </h3>
+</div>
             </div>
 
             <p
               style={{
-                color: "#e2e8f0",
+                color:"#4b5563",
                 lineHeight: "2",
                 marginBottom: "1.5rem",
               }}
               className="text-base sm:text-lg md:text-xl"
             >
-              My goal is to become a highly skilled Full Stack Developer
-              capable of building professional software products,
-              automation systems and scalable applications.
+              My goal is to become a world-class Software Engineer capable of building products used by millions of people across the globe.
             </p>
 
             <p
               style={{
-                color: "#e2e8f0",
+                color:"#4b5563",
                 lineHeight: "2",
                 marginBottom: "1.5rem",
               }}
               className="text-base sm:text-lg md:text-xl"
             >
-              I aim to work on innovative technologies, contribute to
-              meaningful projects and build modern software solutions
-              that make a real impact on people and businesses.
+             I aspire to work on cutting-edge technologies involving Artificial Intelligence, Cloud Computing, Full Stack Development, and scalable distributed systems.
             </p>
 
             <p
               style={{
-                color: "#e2e8f0",
+                color:"#4b5563",
                 lineHeight: "2",
               }}
               className="text-base sm:text-lg md:text-xl"
             >
-              In the future, I aim to work with innovative teams,
-              contribute to impactful products and establish myself
-              as a professional software engineer capable of delivering
-              high-quality solutions.
+              In the long term, I aim to build innovative technology products, contribute to the developer community, and eventually launch my own successful startup.
             </p>
 
             {/* Fun Facts */}
@@ -279,7 +316,7 @@ function About() {
             >
               <span className="
 flex items-center gap-2 px-5 py-3 rounded-xl
-bg-white/5 border border-white/10 text-base text-gray-300
+bg-white border border-gray-200 text-base text-gray-700
 hover:scale-110
 hover:-translate-y-1
 hover:border-blue-500/40
@@ -288,12 +325,12 @@ hover:shadow-blue-500/20
 transition-all duration-300
 ">
                <HiOutlineBolt className="text-yellow-400 text-xl" />
-                I love building projects that solve real problems
+                Building products that solve real-world problems
               </span>
 
               <span className="
 flex items-center gap-2 px-5 py-3 rounded-xl
-bg-white/5 border border-white/10 text-base text-gray-300
+bg-white border border-gray-200 text-base text-gray-700
 hover:scale-110
 hover:-translate-y-1
 hover:border-purple-500/40
@@ -302,12 +339,12 @@ hover:shadow-purple-500/20
 transition-all duration-300
 ">
                 <HiOutlineMoon className="text-indigo-400 text-xl" />
-                I code best late at night
+                Most productive during late-night coding sessions
               </span>
 
               <span className="
 flex items-center gap-2 px-5 py-3 rounded-xl
-bg-white/5 border border-white/10 text-base text-gray-300
+bg-white border border-gray-200 text-base text-gray-700
 hover:scale-110
 hover:-translate-y-1
 hover:border-cyan-500/40
@@ -316,7 +353,7 @@ hover:shadow-cyan-500/20
 transition-all duration-300
 ">
                <HiOutlineRocketLaunch className="text-cyan-400 text-xl" />
-                Always learning something new every day
+                Learning, improving and shipping every single day
               </span>
             </div>
           </motion.div>

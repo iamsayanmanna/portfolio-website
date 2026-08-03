@@ -15,8 +15,8 @@
   }
 
   body {
-    background: #050816;
-    color: white;
+    background: #ffffff;
+    color: #111827;
     font-family: Inter, sans-serif;
     overflow-x: hidden;
     text-rendering: optimizeLegibility;
@@ -55,67 +55,40 @@ section {
 /* ==========================================================================
    PREMIUM GRID & GRADIENT BACKGROUNDS
    ========================================================================== */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background-image: 
-    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
-  background-size: 48px 48px;
-  pointer-events: none;
-  z-index: -2;
-}
 
-body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: 
-    radial-gradient(circle at 15% 20%, rgba(59, 130, 246, 0.12), transparent 30%),
-    radial-gradient(circle at 85% 80%, rgba(139, 92, 246, 0.12), transparent 30%);
-  pointer-events: none;
-  z-index: -1;
-}
+
 
 /* Local Utility Grid Pattern */
 .bg-grid-pattern {
   background-size: 50px 50px;
   background-image:
-    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    linear-gradient(to right, rgba(255,255,255,.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(15,23,42,.05) 1px, transparent 1px);
 }
 
 /* ==========================================================================
    UI COMPONENTS & EFFECTS (Glass, Text, Shadows)
    ========================================================================== */
 .gradient-text {
-  background: linear-gradient(
-    135deg,
-    #ffffff 0%,
-    #f3f4f6 25%,
-    #dbeafe 55%,
-    #93c5fd 80%,
-    #60a5fa 100%
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+    color:#111827;
+    background:none;
+    -webkit-background-clip:border-box;
+    -webkit-text-fill-color:initial;
+
 }
 
-.glass {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+.glass{
+    background:rgba(255,255,255,.75);
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(15,23,42,.08);
+
+    box-shadow:0 10px 35px rgba(15,23,42,.08);
 }
 
-.shadow-blue {
-  box-shadow: 0 0 30px rgba(59, 130, 246, 0.25);
-}
 
-.shadow-purple {
-  box-shadow: 0 0 30px rgba(139, 92, 246, 0.25);
-}
+
+
 
 /* Custom Selection & Scrollbar */
 ::selection {
@@ -128,7 +101,7 @@ body::after {
 }
 
 ::-webkit-scrollbar-track {
-  background: #050816;
+  background:#f3f4f6;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -137,7 +110,7 @@ body::after {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(to bottom, #60a5fa, #a78bfa);
+  background:#94a3b8;
 }
 
 /* Global Transition Premium Smoothness */
@@ -169,34 +142,42 @@ button, a {
   top:50%;
   left:50%;
 
-  width:54px;
-  height:54px;
+  width:58px;
+  height:58px;
 
-  margin-left:-27px;
-  margin-top:-27px;
-
-  border-radius:50%;
+  margin-left:-29px;
+  margin-top:-29px;
 
   display:flex;
   align-items:center;
   justify-content:center;
 
-  background:rgba(255,255,255,.08);
-  backdrop-filter:blur(14px);
+  border-radius:9999px;
 
-  border:1px solid rgba(255,255,255,.1);
+  background:rgba(255,255,255,.96);
+
+  backdrop-filter:blur(20px);
+
+  border:1px solid rgba(66,133,244,.12);
 
   box-shadow:
-    0 0 20px rgba(255,255,255,.08);
+      0 8px 24px rgba(17,24,39,.08),
+      0 2px 8px rgba(17,24,39,.04);
+
+  transition:all .35s ease;
 
   z-index:20;
 }
 
 .orbit:hover{
-  transform:scale(1.15);
+
+  transform:translateY(-4px) scale(1.08);
+
+  border-color:#4285F4;
+
   box-shadow:
-    0 0 30px rgba(59,130,246,.35),
-    0 0 50px rgba(168,85,247,.2);
+      0 18px 40px rgba(66,133,244,.18);
+
 }
 
 /* OUTER RING - 8 LOGOS */
@@ -398,7 +379,7 @@ nav{
 #skills{
   position: relative;
 }
-
+/*
 #skills::before{
   content:"";
   position:absolute;
@@ -440,7 +421,7 @@ nav{
     transform:translate(-40px,30px);
   }
 }
-
+*/
 .skills-title{
   animation:titleGlow 3s ease-in-out infinite;
 }
@@ -592,11 +573,7 @@ nav{
   height:3px;
   width:0;
 
-  background:linear-gradient(
-    90deg,
-    #3b82f6,
-    #8b5cf6
-  );
+  background:#cbd5e1;
 
   transition:.6s;
 }
@@ -684,11 +661,7 @@ nav{
 
   border-radius:999px;
 
-  background:linear-gradient(
-    90deg,
-    #3b82f6,
-    #8b5cf6
-  );
+  background:#cbd5e1;
 
   animation:lineGlow 3s ease-in-out infinite;
 }
@@ -724,7 +697,7 @@ nav{
   transform:translateX(5px);
 }
 
-
+/*
 .mesh-bg{
   position:absolute;
   inset:0;
@@ -792,7 +765,7 @@ nav{
     transform:translate(-120px,-80px);
   }
 }
-
+*/
 .light-orb{
   position:absolute;
   border-radius:50%;

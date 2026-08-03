@@ -48,7 +48,7 @@ function Projects() {
   style={{
     width: "95%",
     maxWidth: "1400px",
-    margin: "80px auto 0 auto",
+     margin: "0 auto",
   }}
 >
         {/* Section Title */}
@@ -57,14 +57,14 @@ function Projects() {
   whileInView={{ opacity: 1, y: 0 }}
   transition={{ duration: 0.8 }}
   viewport={{ once: true }}
-  className="text-center mb-40"
+  className="text-center mb-16"
 >
 
   <p className="text-gray-400 text-sm tracking-[0.4em] uppercase">
   My Recent Work
 </p>
 
-<div className="h-10"></div>
+<div className="h-2"></div>
 
 <h2 className="
 projects-title
@@ -80,7 +80,9 @@ leading-none
   Featured Projects
 </h2>
 
-  <div className="mt-8 mx-auto w-24 h-1 rounded-full bg-gradient-to-r from-blue-500 to-purple-500"></div>
+  <div className="mt-8 mx-auto w-24 h-1 rounded-full bg-gradient-to-r from-[#4285F4]
+via-[#5B7FFF]
+to-[#7B61FF]"></div>
 
 </motion.div>
 
@@ -90,7 +92,7 @@ grid
 grid-cols-1
 md:grid-cols-2
 xl:grid-cols-3
-gap-8
+gap-9
 lg:gap-12
 ">
 
@@ -99,25 +101,26 @@ lg:gap-12
             <motion.div
               key={index}
               className="
-              group
-              project-card
-              bg-white/5
-              border
-              border-white/10
-              rounded-3xl
-              overflow-hidden
-              backdrop-blur-xl
-              hover:bg-white/10
-              hover:border-blue-500/30
-              hover:-translate-y-5
-hover:scale-[1.03]
-              hover:shadow-2xl
-              hover:shadow-blue-500/20
-              transition-all
-              duration-500
-              flex
-              flex-col
-              "
+group
+project-card
+bg-white
+border
+border-gray-200
+rounded-3xl
+overflow-hidden
+shadow-[0_15px_40px_rgba(17,24,39,.08)]
+hover:border-[#4285F4]/40
+hover:shadow-[0_30px_70px_rgba(66,133,244,.15)]
+hover:ring-1
+hover:ring-[#4285F4]/20
+hover:ring-1
+hover:ring-[#4285F4]/20
+hover:-translate-y-3
+transition-all
+duration-500
+flex
+flex-col
+"
               initial={{ opacity: 0, y: 60 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{
@@ -132,7 +135,7 @@ hover:scale-[1.03]
               {/* Preview Area */}
              {/* Project Thumbnail */}
 
-<div className="relative h-56 overflow-hidden border-b border-white/10">
+<div className="relative h-72 overflow-hidden rounded-t-3xl border-b border-gray-100">
 
   <img
     src={project.image}
@@ -143,35 +146,41 @@ hover:scale-[1.03]
       object-cover
       transition-all
       duration-500
-      group-hover:scale-110
+      group-hover:scale-[1.08]
+group-hover:rotate-[0.5deg]
     "
   />
 
   {/* Dark Overlay */}
 
-  <div className="absolute inset-0 bg-gradient-to-t from-[#0b1020] via-transparent to-transparent"></div>
+  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent"></div>
 
 </div>
 
               {/* Content */}
-              <div className="p-8 flex flex-col flex-1 min-h-[220px]">
+              <div className="p-9 flex flex-col flex-1 min-h-[220px]">
 
-                <h3 className="
-text-2xl
-sm:text-3xl
-font-bold
-mb-5
+                <h3
+className="
+text-[32px]
+font-black
+tracking-[-0.04em]
+text-gray-900
+tracking-[-0.03em]
+text-gray-900
+mb-6
 leading-tight
-">
+"
+>
                   {project.title}
                 </h3>
 
                 <p className="
-text-gray-300
-text-base
-sm:text-lg
-leading-7
-sm:leading-8
+text-gray-600
+text-[16px]
+leading-8
+font-medium
+text-gray-600
 mb-8
 ">
                   {project.description}
@@ -182,21 +191,31 @@ mb-8
   {/* GitHub */}
 
   <a
-    href={project.github}
+    href={project.link}
     target="_blank"
     rel="noopener noreferrer"
     className="
       flex-1
       text-center
-      py-3
-      rounded-xl
+      h-12
+flex
+items-center
+justify-center
+      rounded-2xl
       border
-      border-white/10
-      bg-white/5
+      border-gray-200
+bg-white
+text-gray-700
+hover:border-[#4285F4]
+hover:text-[#4285F4]
+hover:shadow-lg
       hover:bg-white/10
       transition-all
       duration-300
       font-semibold
+      hover:bg-[#4285F4]
+hover:text-white
+hover:border-[#4285F4]
     "
   >
     GitHub
@@ -212,11 +231,15 @@ mb-8
       className="
         flex-1
         text-center
-        py-3
-        rounded-xl
+        h-12
+        flex
+        items-center
+        justify-center
+        rounded-2xl
         bg-gradient-to-r
-        from-blue-500
-        to-purple-500
+        from-[#4285F4]
+via-[#5B7FFF]
+to-[#7B61FF]
         font-semibold
         text-white
         hover:scale-105
@@ -230,8 +253,11 @@ mb-8
       disabled
       className="
         flex-1
-        py-3
-        rounded-xl
+        h-12
+        flex
+        items-center
+        justify-center
+        rounded-2xl
         bg-gray-700/40
         text-gray-400
         cursor-not-allowed
@@ -257,7 +283,7 @@ mb-8
           className="
 projects-description
 text-center
-text-gray-300
+text-gray-600
 text-base
 sm:text-lg
 lg:text-xl
