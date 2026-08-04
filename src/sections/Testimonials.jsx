@@ -1,14 +1,19 @@
 import { motion } from "framer-motion";
-import { BadgeCheck, Star } from "lucide-react";
+import {
+  BadgeCheck,
+  Star,
+  StarHalf,
+} from "lucide-react";
 
 const testimonials = [
   {
     name: "Aman Karki",
-    role: "Founder",
+    role: "Co-Founder & COO",
     company: "SkillBotix",
     review:
       "Sayan is highly dedicated and always eager to improve. His attention to detail and willingness to learn make him a developer with strong long-term potential.",
     badge: "Verified",
+    rating: 5,
   },
 
   {
@@ -18,6 +23,7 @@ const testimonials = [
     review:
       "His portfolio demonstrates clean UI design, responsive layouts and continuous improvement. I'm excited to see what he builds next.",
     badge: "Community",
+    rating: 4.9,
   },
 
   {
@@ -27,6 +33,7 @@ const testimonials = [
     review:
       "Every project is another step toward becoming a world-class software engineer. I believe consistency beats motivation.",
     badge: "Personal",
+    rating: 3,
   },
   {
     name: "Saurav Das",
@@ -35,6 +42,7 @@ const testimonials = [
     review:
       "Great eye for design and performance. The code structure is clean, making it very easy to hand off and integrate into our production setup.",
     badge: "Verified",
+    rating: 4.5,
   },
   {
     name: "Subham Roy",
@@ -43,6 +51,7 @@ const testimonials = [
     review:
       "Worked together on a web app project. Outstanding frontend execution with pixel-perfect accuracy and great responsiveness.",
     badge: "Verified",
+    rating: 4,
   },
   {
     name: "Pooja Banerjee",
@@ -51,6 +60,7 @@ const testimonials = [
     review:
       "Delivered the user interface ahead of time. The attention to spacing, typography, and mobile responsiveness was top-notch.",
     badge: "Verified",
+    rating: 5,
   },
   {
     name: "Ayan Mukherjee",
@@ -59,6 +69,7 @@ const testimonials = [
     review:
       "Super smooth experience working together. Highly efficient with modern JavaScript frameworks and clean CSS architecture.",
     badge: "Verified",
+    rating: 4.5,
   },
   {
     name: "Rishi Ganguly",
@@ -67,6 +78,7 @@ const testimonials = [
     review:
       "Hired for our client's landing page redesign. Conversion rates went up significantly right after launch. Highly recommended!",
     badge: "Verified",
+    rating: 5,
   },
   {
     name: "Sneha Sen",
@@ -75,6 +87,7 @@ const testimonials = [
     review:
       "Very professional and proactive in communication. Understands edge-cases in responsive web design extremely well.",
     badge: "Verified",
+    rating: 4.5,
   },
   {
     name: "Debanjan Saha",
@@ -83,6 +96,7 @@ const testimonials = [
     review:
       "API integration was flawless. Clean component architecture made backend data wiring smooth without any hitch.",
     badge: "Verified",
+    rating: 4.7,
   },
   {
     name: "Ankita Ghosal",
@@ -91,6 +105,7 @@ const testimonials = [
     review:
       "The portfolio and web design were lightning-fast and perfectly optimized for SEO. Exactly what my clients needed.",
     badge: "Verified",
+    rating: 5,
   },
   {
     name: "Tritoy Dutta",
@@ -99,6 +114,7 @@ const testimonials = [
     review:
       "Consistently delivers clean code, great UI aesthetics, and follows proper web development best practices.",
     badge: "Verified",
+    rating: 4.9,
   }
 ];
 
@@ -113,7 +129,7 @@ className="pt-2 pb-20 px-6"
   initial={{ opacity: 0, y: 40 }}
   whileInView={{ opacity: 1, y: 0 }}
   transition={{ duration: 0.8 }}
-  viewport={{ once: true }}
+  viewport={{ once: true, amount: 0.15, }}
   className="text-center mb-14"
 >
 
@@ -143,10 +159,10 @@ className="pt-2 pb-20 px-6"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{
-        duration: 0.7,
-        delay: index * 0.15,
+        duration: 0.35,
+        delay: index * 0.04,
       }}
-      viewport={{ once: true }}
+      viewport={{ once: true, amount: 0.15 }}
       className="
 group
 relative
@@ -322,14 +338,43 @@ font-medium
   text-lg
   "
 >
-        <div className="mt-6 flex items-center gap-1">
-  {Array.from({ length: 5 }).map((_, i) => (
-    <Star
-      key={i}
-      size={16}
-      className="fill-[#FBBC05] text-[#FBBC05]"
-    />
-  ))}
+   <div className="mt-6 flex items-center gap-1">
+
+  {Array.from({ length: 5 }).map((_, i) => {
+
+    const fullStars = Math.floor(item.rating);
+    const hasHalfStar = item.rating % 1 >= 0.5;
+
+    if (i < fullStars) {
+      return (
+        <Star
+          key={i}
+          size={16}
+          className="fill-[#FBBC05] text-[#FBBC05]"
+        />
+      );
+    }
+
+    if (i === fullStars && hasHalfStar) {
+      return (
+        <StarHalf
+          key={i}
+          size={16}
+          className="fill-[#FBBC05] text-[#FBBC05]"
+        />
+      );
+    }
+
+    return (
+      <Star
+        key={i}
+        size={16}
+        className="text-gray-300"
+      />
+    );
+
+  })}
+
 </div>
       </div>
 

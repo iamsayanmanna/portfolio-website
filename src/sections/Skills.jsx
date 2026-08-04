@@ -14,10 +14,10 @@ const skillCategories = [
   icon: <FaCode size={32} />,
   skills: [
     { name: "C", icon: "devicon-c-plain colored", level: 90 },
-    { name: "Java", icon: "devicon-java-plain colored", level: 82 },
+    { name: "Java", icon: "devicon-java-plain colored", level: 50 },
     { name: "Python", icon: "devicon-python-plain colored", level: 90 },
-    { name: "JavaScript", icon: "devicon-javascript-plain colored", level: 90 },
-    { name: "TypeScript", icon: "devicon-typescript-plain colored", level: 75 },
+    { name: "JavaScript", icon: "devicon-javascript-plain colored", level: 75 },
+    { name: "TypeScript", icon: "devicon-typescript-plain colored", level: 65 },
   ],
 },
 
@@ -41,8 +41,8 @@ const skillCategories = [
     { name: "Node.js", icon: "devicon-nodejs-plain colored", level: 70 },
     { name: "Express.js", icon: "devicon-express-original", level: 68 },
     { name: "REST API", icon: "devicon-fastapi-plain colored", level: 75 },
-    { name: "MongoDB", icon: "devicon-mongodb-plain colored", level: 75 },
-    { name: "MySQL", icon: "devicon-mysql-plain colored", level: 85 },
+    { name: "MongoDB", icon: "devicon-mongodb-plain colored", level: 70 },
+    { name: "MySQL", icon: "devicon-mysql-plain colored", level: 75 },
   ],
 },
 

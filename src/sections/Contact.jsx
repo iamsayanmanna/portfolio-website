@@ -1,4 +1,12 @@
 import { motion } from "framer-motion";
+import { Copy, ExternalLink } from "lucide-react";
+import {
+  SiGmail,
+  SiWhatsapp,
+  SiGooglemaps,
+} from "react-icons/si";
+import { FaLinkedin } from "react-icons/fa";
+
 import {
   User,
   Mail,
@@ -133,15 +141,42 @@ Whether you're building a startup, scaling a product or looking for a frontend d
 
 <div className="space-y-6">
 
-  <h3 className="text-3xl font-black text-gray-900">
-    Contact Information
+  <div>
+
+  <p className="
+  uppercase
+  tracking-[0.28em]
+  text-[#4285F4]
+  font-semibold
+  text-sm
+  mb-4
+  ">
+    GET IN TOUCH
+  </p>
+
+  <h3 className="
+  text-5xl
+  font-black
+  tracking-[-0.04em]
+  text-gray-900
+  leading-tight
+  ">
+    Contact
+    <span className="text-[#34A853]">.</span>
   </h3>
 
-  <p className="text-gray-500 leading-8">
-    Feel free to reach out for internships, freelance projects,
-    collaborations or simply to say hello. I'll do my best to
-    respond as soon as possible.
+  <p className="
+  mt-6
+  max-w-[520px]
+  text-lg
+  leading-8
+  text-gray-500
+  ">
+    Open to internships, freelance projects and meaningful
+    collaborations. Feel free to reach out anytime.
   </p>
+
+</div>
 
   {/* Email */}
 
@@ -176,37 +211,78 @@ Whether you're building a startup, scaling a product or looking for a frontend d
   >
 
     <div className="
-    w-14
-    h-14
-    rounded-2xl
+w-16
+h-16
 
-    flex
-    items-center
-    justify-center
+rounded-2xl
 
-    bg-gradient-to-br
-    from-[#4285F4]
-    to-[#7B61FF]
+bg-white
 
-    text-white
-    hover:scale-[1.02]
-    ">
+border
+border-gray-200
 
-      <Mail size={24} />
+flex
+items-center
+justify-center
+
+shadow-[0_8px_25px_rgba(0,0,0,.06)]
+
+group-hover:scale-110
+group-hover:shadow-[0_18px_45px_rgba(66,133,244,.18)]
+
+transition-all
+duration-500
+">
+
+      <SiGmail
+  size={30}
+  className="text-[#EA4335]"
+/>
 
     </div>
 
     <div>
 
-      <h4 className="font-bold text-gray-900">
-        Email
-      </h4>
+      <h4
+  className="
+  text-[18px]
+  font-bold
+  tracking-[-0.02em]
+  text-gray-900
+  "
+>
+  Email
+</h4>
 
-      <p className="text-gray-500 text-sm">
-        sayanmanna.in@gmail.com
-      </p>
+<p
+  className="
+  mt-1
+  text-[15px]
+  text-gray-500
+  "
+>
+  sayanmanna.in@gmail.com
+</p>
 
     </div>
+
+    <div
+  className="
+  ml-auto
+
+  text-gray-300
+
+  text-2xl
+
+  transition-all
+  duration-300
+
+  group-hover:text-[#4285F4]
+  group-hover:translate-x-1
+  "
+>
+  →
+</div>
 
   </a>
 
@@ -235,6 +311,19 @@ Whether you're building a startup, scaling a product or looking for a frontend d
   hover:border-[#25D366]/30
   hover:-translate-y-2
   hover:shadow-[0_25px_60px_rgba(37,211,102,.18)]
+  before:absolute
+before:inset-0
+before:rounded-[32px]
+before:bg-gradient-to-r
+before:from-[#4285F4]/0
+before:via-[#4285F4]/5
+before:to-[#34A853]/0
+before:opacity-0
+hover:before:opacity-100
+before:transition-all
+before:duration-700
+relative
+overflow-hidden
 
   transition-all
   duration-500
@@ -244,37 +333,76 @@ Whether you're building a startup, scaling a product or looking for a frontend d
 
   <div
     className="
-    w-14
-    h-14
-    rounded-2xl
+w-16
+h-16
 
-    flex
-    items-center
-    justify-center
+rounded-2xl
 
-    bg-gradient-to-br
-    from-[#25D366]
-    to-[#128C7E]
+bg-white
 
-    text-white
-    text-2xl
-    hover:scale-[1.02]
-    "
+border
+border-gray-200
+
+flex
+items-center
+justify-center
+
+shadow-[0_8px_25px_rgba(0,0,0,.06)]
+
+group-hover:scale-110
+group-hover:shadow-[0_18px_45px_rgba(66,133,244,.18)]
+
+transition-all
+duration-500
+"
   >
-    💬
+   <SiWhatsapp
+  size={30}
+  className="text-[#25D366]"
+/>
   </div>
 
   <div>
 
-    <h4 className="font-bold text-gray-900">
-      WhatsApp
-    </h4>
+    <h4
+  className="
+  text-[18px]
+  font-bold
+  tracking-[-0.02em]
+  text-gray-900
+  "
+>
+  WhatsApp
+</h4>
 
-    <p className="text-gray-500 text-sm">
-      Chat with me instantly
-    </p>
+<p
+  className="
+  mt-1
+  text-[15px]
+  text-gray-500
+  "
+>
+  Chat with me instantly
+</p>
 
   </div>
+  <div
+  className="
+  ml-auto
+
+  text-gray-300
+
+  text-2xl
+
+  transition-all
+  duration-300
+
+  group-hover:text-[#4285F4]
+  group-hover:translate-x-1
+  "
+>
+  →
+</div>
 
 </a>
 
@@ -311,38 +439,77 @@ Whether you're building a startup, scaling a product or looking for a frontend d
 >
 
   <div
-    className="
-    w-14
-    h-14
-    rounded-2xl
+  className="
+w-16
+h-16
 
-    flex
-    items-center
-    justify-center
+rounded-2xl
 
-    bg-gradient-to-br
-    from-[#0A66C2]
-    to-[#004182]
+bg-white
 
-    text-white
-    text-2xl
-    hover:scale-[1.02]
-    "
+border
+border-gray-200
+
+flex
+items-center
+justify-center
+
+shadow-[0_8px_25px_rgba(0,0,0,.06)]
+
+group-hover:scale-110
+group-hover:shadow-[0_18px_45px_rgba(66,133,244,.18)]
+
+transition-all
+duration-500
+"
   >
-    💼
+   <FaLinkedin
+  size={30}
+  className="text-[#0A66C2]"
+/>
   </div>
 
   <div>
 
-    <h4 className="font-bold text-gray-900">
-      LinkedIn
-    </h4>
+    <h4
+  className="
+  text-[18px]
+  font-bold
+  tracking-[-0.02em]
+  text-gray-900
+  "
+>
+  LinkedIn
+</h4>
 
-    <p className="text-gray-500 text-sm">
-      Connect Professionally
-    </p>
+<p
+  className="
+  mt-1
+  text-[15px]
+  text-gray-500
+  "
+>
+  Connect Professionally
+</p>
 
   </div>
+  <div
+  className="
+  ml-auto
+
+  text-gray-300
+
+  text-2xl
+
+  transition-all
+  duration-300
+
+  group-hover:text-[#4285F4]
+  group-hover:translate-x-1
+  "
+>
+  →
+</div>
 
 </a>
 
@@ -368,36 +535,132 @@ Whether you're building a startup, scaling a product or looking for a frontend d
 >
 
   <div
-    className="
-    w-14
-    h-14
-    rounded-2xl
+ className="
+w-16
+h-16
 
-    flex
-    items-center
-    justify-center
+rounded-2xl
 
-    bg-gradient-to-br
-    from-[#34A853]
-    to-[#0F9D58]
+bg-white
 
-    text-white
-    text-2xl
-    hover:scale-[1.02]
-    "
+border
+border-gray-200
+
+flex
+items-center
+justify-center
+
+shadow-[0_8px_25px_rgba(0,0,0,.06)]
+
+group-hover:scale-110
+group-hover:shadow-[0_18px_45px_rgba(66,133,244,.18)]
+
+transition-all
+duration-500
+"
   >
-    📍
+    <SiGooglemaps
+  size={30}
+  className="text-[#34A853]"
+/>
   </div>
 
   <div>
 
-    <h4 className="font-bold text-gray-900">
-      Location
-    </h4>
+   <h4
+  className="
+  text-[18px]
+  font-bold
+  tracking-[-0.02em]
+  text-gray-900
+  "
+>
+  Location
+</h4>
 
-    <p className="text-gray-500 text-sm">
-      Kolkata, West Bengal, India
-    </p>
+<p
+  className="
+  mt-1
+  text-[15px]
+  text-gray-500
+  "
+>
+  Kolkata, West Bengal, India
+</p>
+
+  </div>
+
+  <div
+  className="
+  ml-auto
+
+  text-gray-300
+
+  text-2xl
+
+  transition-all
+  duration-300
+
+  group-hover:text-[#4285F4]
+  group-hover:translate-x-1
+  "
+>
+  →
+</div>
+
+</div>
+
+<div
+  className="
+  mt-8
+
+  rounded-[28px]
+
+  bg-white/80
+  backdrop-blur-2xl
+
+  border
+  border-white/70
+
+  p-7
+
+  shadow-[0_18px_55px_rgba(15,23,42,.08)]
+  "
+>
+
+  <div className="flex items-center justify-between py-3 border-b border-gray-100">
+
+    <span className="text-gray-500">
+      Availability
+    </span>
+
+    <span className="font-semibold text-[#34A853]">
+      Open to Work
+    </span>
+
+  </div>
+
+  <div className="flex items-center justify-between py-3 border-b border-gray-100">
+
+    <span className="text-gray-500">
+      Response Time
+    </span>
+
+    <span className="font-semibold text-gray-900">
+      Within 24 Hours
+    </span>
+
+  </div>
+
+  <div className="flex items-center justify-between pt-3">
+
+    <span className="text-gray-500">
+      Time Zone
+    </span>
+
+    <span className="font-semibold text-gray-900">
+      GMT +5:30 (IST)
+    </span>
 
   </div>
 

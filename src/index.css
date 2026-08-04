@@ -916,7 +916,7 @@ body {
   gap: 2rem;
   width: max-content;
 
-  animation: testimonialScroll 35s linear infinite;
+  animation: testimonialScroll 25s linear infinite;
 }
 
 .testimonial-slider:hover{
