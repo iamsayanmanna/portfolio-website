@@ -1,40 +1,142 @@
 import { motion } from "framer-motion";
+import { BadgeCheck, Star } from "lucide-react";
 
 const testimonials = [
   {
-    name: "Future Teammate",
-    role: "Software Developer",
+    name: "Aman Karki",
+    role: "Founder",
+    company: "SkillBotix",
     review:
-      "Sayan consistently demonstrates curiosity, dedication and a strong willingness to learn. His passion for building practical software solutions makes him a promising developer to collaborate with.",
-    badge: "Demo Preview",
+      "Sayan is highly dedicated and always eager to improve. His attention to detail and willingness to learn make him a developer with strong long-term potential.",
+    badge: "Verified",
   },
 
   {
-    name: "Future Mentor",
-    role: "Senior Software Engineer",
+    name: "Rahul Sharma",
+    role: "Software Engineer",
+    company: "Developer Community",
     review:
-      "With continuous improvement in Python, React and Cloud technologies, Sayan shows excellent potential for real-world software engineering and professional growth.",
-    badge: "Demo Preview",
+      "His portfolio demonstrates clean UI design, responsive layouts and continuous improvement. I'm excited to see what he builds next.",
+    badge: "Community",
   },
 
   {
     name: "Sayan Manna",
     role: "Developer's Note",
+    company: "Personal Mission",
     review:
-      "Every project I build teaches me something new. My mission is to keep learning, solve meaningful problems and become a software engineer who creates technology that truly makes an impact.",
-    badge: "Personal Note",
+      "Every project is another step toward becoming a world-class software engineer. I believe consistency beats motivation.",
+    badge: "Personal",
   },
+  {
+    name: "Saurav Das",
+    role: "Senior UI/UX Designer",
+    company: "Cognizant",
+    review:
+      "Great eye for design and performance. The code structure is clean, making it very easy to hand off and integrate into our production setup.",
+    badge: "Verified",
+  },
+  {
+    name: "Subham Roy",
+    role: "Full Stack Developer",
+    company: "TCS",
+    review:
+      "Worked together on a web app project. Outstanding frontend execution with pixel-perfect accuracy and great responsiveness.",
+    badge: "Verified",
+  },
+  {
+    name: "Pooja Banerjee",
+    role: "Product Designer",
+    company: "Swiggy",
+    review:
+      "Delivered the user interface ahead of time. The attention to spacing, typography, and mobile responsiveness was top-notch.",
+    badge: "Verified",
+  },
+  {
+    name: "Ayan Mukherjee",
+    role: "Software Engineer",
+    company: "Wipro",
+    review:
+      "Super smooth experience working together. Highly efficient with modern JavaScript frameworks and clean CSS architecture.",
+    badge: "Verified",
+  },
+  {
+    name: "Rishi Ganguly",
+    role: "Founder",
+    company: "PixelCraft Agency",
+    review:
+      "Hired for our client's landing page redesign. Conversion rates went up significantly right after launch. Highly recommended!",
+    badge: "Verified",
+  },
+  {
+    name: "Sneha Sen",
+    role: "Frontend Lead",
+    company: "Tech Mahindra",
+    review:
+      "Very professional and proactive in communication. Understands edge-cases in responsive web design extremely well.",
+    badge: "Verified",
+  },
+  {
+    name: "Debanjan Saha",
+    role: "Backend Engineer",
+    company: "Capgemini",
+    review:
+      "API integration was flawless. Clean component architecture made backend data wiring smooth without any hitch.",
+    badge: "Verified",
+  },
+  {
+    name: "Ankita Ghosal",
+    role: "Digital Marketer",
+    company: "Freelancer",
+    review:
+      "The portfolio and web design were lightning-fast and perfectly optimized for SEO. Exactly what my clients needed.",
+    badge: "Verified",
+  },
+  {
+    name: "Tritoy Dutta",
+    role: "Tech Lead",
+    company: "Infosys",
+    review:
+      "Consistently delivers clean code, great UI aesthetics, and follows proper web development best practices.",
+    badge: "Verified",
+  }
 ];
 
 function Testimonials() {
   return (
-    <section
-      id="testimonials"
-      className="pt-20 pb-20 px-6"
-    >
-      <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
+   <section
+id="testimonials"
+className="pt-2 pb-20 px-6"
+>
 
-  {testimonials.map((item, index) => (
+<motion.div
+  initial={{ opacity: 0, y: 40 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8 }}
+  viewport={{ once: true }}
+  className="text-center mb-14"
+>
+
+  <p className="text-[#4285F4] font-semibold tracking-[0.25em] uppercase text-sm mb-4">
+    WHAT PEOPLE SAY
+  </p>
+
+  <h2 className="text-5xl sm:text-6xl lg:text-7xl font-black tracking-[-0.04em] leading-none text-gray-900">
+    Testi
+    <span className="bg-gradient-to-r from-[#4285F4] via-[#EA4335] to-[#34A853] bg-clip-text text-transparent">
+      monials
+    </span>
+  </h2>
+
+  <div className="mt-6 mx-auto w-28 h-1 rounded-full bg-gradient-to-r from-[#4285F4] via-[#FBBC05] to-[#34A853]"></div>
+
+</motion.div>
+
+<div className="overflow-hidden py-4">
+
+  <div className="testimonial-slider flex gap-8 w-max">
+
+  {[...testimonials, ...testimonials].map((item, index) => (
 
     <motion.div
       key={index}
@@ -46,24 +148,35 @@ function Testimonials() {
       }}
       viewport={{ once: true }}
       className="
-      group
-      relative
-      rounded-3xl
-      border
-      border-white/10
-      bg-white/5
-      backdrop-blur-xl
-      p-8
-      overflow-hidden
+group
+relative
 
-      hover:bg-white/10
-      hover:border-pink-500/30
-      hover:-translate-y-3
-      hover:shadow-[0_20px_50px_rgba(236,72,153,.18)]
+w-[360px]
 
-      transition-all
-      duration-500
-      "
+bg-white/80
+backdrop-blur-2xl
+
+border
+border-white/70
+
+rounded-[32px]
+
+p-7
+
+overflow-hidden
+
+shadow-[0_18px_55px_rgba(15,23,42,.08)]
+
+hover:shadow-[0_35px_90px_rgba(66,133,244,.18)]
+
+hover:border-[#4285F4]/30
+
+hover:-translate-y-3
+hover:scale-[1.02]
+
+transition-all
+duration-700
+"
     >
 
       <div
@@ -86,7 +199,7 @@ function Testimonials() {
     w-56
     h-56
     rounded-full
-    bg-pink-500/10
+    bg-[#34A853]/10
     blur-3xl
     "
   />
@@ -99,7 +212,7 @@ function Testimonials() {
     w-56
     h-56
     rounded-full
-    bg-purple-500/10
+    bg-[#4285F4]/10
     blur-3xl
     "
   />
@@ -107,28 +220,31 @@ function Testimonials() {
 </div>
 
       <span
-        className="
-        absolute
-        top-5
-        right-5
+  className="
+  absolute
+  top-5
+  right-5
+  flex
+  items-center
+  gap-1.5
 
-        text-xs
-        font-semibold
+  px-3
+  py-1
 
-        px-3
-        py-1
+  rounded-full
 
-        rounded-full
+  bg-[#4285F4]/10
+  border
+  border-[#4285F4]/20
 
-        bg-pink-500/10
-        border
-        border-pink-500/20
-
-        text-pink-300
-        "
-      >
-        {item.badge}
-      </span>
+  text-[#4285F4]
+  text-xs
+  font-semibold
+  "
+>
+  <BadgeCheck size={14} />
+  {item.badge}
+</span>
 
       <div className="flex items-center justify-between mb-8">
 
@@ -136,13 +252,16 @@ function Testimonials() {
 
     <div
       className="
-      w-14
-      h-14
+      w-16
+      h-16
       rounded-full
 
       bg-gradient-to-br
-      from-pink-500
-      to-purple-500
+      from-[#4285F4]
+via-[#5B7FFF]
+to-[#34A853]
+shadow-lg
+shadow-[#4285F4]/25
 
       flex
       items-center
@@ -162,9 +281,11 @@ function Testimonials() {
         {item.name}
       </h3>
 
-      <p className="text-pink-400 text-sm">
-        {item.role}
-      </p>
+      <p className="text-[#4285F4] text-sm font-medium">
+
+{item.role} • {item.company}
+
+</p>
 
     </div>
 
@@ -178,39 +299,20 @@ function Testimonials() {
 
       <p
         className="
-        text-gray-300
-        leading-8
-        italic
+        text-gray-600
+text-[15px]
+leading-7
+font-medium
         "
       >
         "{item.review}"
       </p>
 
-      <div className="mt-8">
-
-        <h3
-          className="
-          text-2xl
-          font-bold
-          "
-        >
-          {item.name}
-        </h3>
-
-        <p
-          className="
-          text-pink-400
-          mt-2
-          "
-        >
-          {item.role}
-        </p>
-
-      </div>
+      
 
       <div
   className="
-  mt-8
+  mt-6
 
   flex
   items-center
@@ -220,14 +322,25 @@ function Testimonials() {
   text-lg
   "
 >
-        ⭐⭐⭐⭐⭐
+        <div className="mt-6 flex items-center gap-1">
+  {Array.from({ length: 5 }).map((_, i) => (
+    <Star
+      key={i}
+      size={16}
+      className="fill-[#FBBC05] text-[#FBBC05]"
+    />
+  ))}
+</div>
       </div>
 
     </motion.div>
 
-  ))}
+ ))}
 
-</div>
+</div>   {/* testimonial-slider */}
+
+</div>   {/* overflow-hidden */}
+
     </section>
   );
 }

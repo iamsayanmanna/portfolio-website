@@ -1,4 +1,5 @@
 function Blog() {
+  return null;
   return (
     <section
       id="blog"

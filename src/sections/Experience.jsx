@@ -116,6 +116,7 @@ const journey = [
 ];
 
 function Experience() {
+  return null;
   return (
     <section
       id="experience"

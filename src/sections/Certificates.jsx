@@ -48,25 +48,67 @@ function Certificates() {
       <div className="w-[92%] max-w-[1400px] mx-auto">
 
         <motion.div
-          initial={{ opacity: 0, y: 60 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center mb-24"
-        >
-          <p className="text-gray-400 text-sm tracking-[0.4em] uppercase">
-            My Achievements
-          </p>
+  initial={{ opacity: 0, y: 60 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8 }}
+  viewport={{ once: true }}
+  className="text-center mb-16"
+>
 
-          <div className="h-8"></div>
+  <p
+    className="
+    text-[#4285F4]
+    font-semibold
+    tracking-[0.25em]
+    uppercase
+    text-sm
+    mb-4
+    "
+  >
+    My Achievements
+  </p>
 
-          <h2 className="text-7xl md:text-8xl font-black gradient-text">
-            Certifications
-          </h2>
+  <h2
+    className="
+    text-5xl
+    sm:text-6xl
+    lg:text-7xl
+    font-black
+    tracking-[-0.04em]
+    leading-none
+    text-gray-900
+    "
+  >
+    Certifi
+    <span
+      className="
+      bg-gradient-to-r
+      from-[#4285F4]
+      via-[#EA4335]
+      to-[#34A853]
+      bg-clip-text
+      text-transparent
+      "
+    >
+      cations
+    </span>
+  </h2>
 
-          <div className="mt-8 mx-auto w-24 h-1 rounded-full bg-gradient-to-r from-blue-500 to-purple-500"></div>
+  <div
+    className="
+    mt-6
+    mx-auto
+    w-28
+    h-1
+    rounded-full
+    bg-gradient-to-r
+    from-[#4285F4]
+    via-[#FBBC05]
+    to-[#34A853]
+    "
+  ></div>
 
-        </motion.div>
+</motion.div>
 
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -83,36 +125,59 @@ function Certificates() {
       }}
       viewport={{ once: true }}
       className="
-      group
-      bg-white/5
-      border
-      border-white/10
-      rounded-3xl
-      p-8
-      backdrop-blur-xl
-      hover:bg-white/10
-      hover:border-blue-500/30
-      hover:-translate-y-3
-      hover:shadow-xl
-      hover:shadow-blue-500/15
-      transition-all
-      duration-500
-      "
+group
+
+bg-white/80
+backdrop-blur-2xl
+
+border
+border-white/70
+
+rounded-[32px]
+
+overflow-hidden
+
+shadow-[0_18px_55px_rgba(15,23,42,.08)]
+
+hover:shadow-[0_45px_110px_rgba(66,133,244,.22)]
+
+hover:border-[#4285F4]/50
+
+hover:-translate-y-5
+hover:scale-[1.02]
+
+transition-all
+duration-700
+"
     >
 
-      <div className="relative mb-6 overflow-hidden rounded-2xl border border-white/10">
+      <div
+className="
+relative
+overflow-hidden
+
+rounded-t-[32px]
+
+border-b
+border-gray-100
+"
+>
 
   <img
     src={cert.image}
     alt={cert.title}
     className="
-      w-full
-      h-48
-      object-cover
-      transition-transform
-      duration-500
-      group-hover:scale-110
-    "
+w-full
+h-64
+object-cover
+
+transition-all
+duration-700
+
+group-hover:scale-110
+group-hover:bg-white/30
+group-hover:rotate-[0.5deg]
+"
   />
 
   <div
@@ -120,7 +185,10 @@ function Certificates() {
     className="
       absolute
       inset-0
-      bg-black/60
+      bg-gradient-to-t
+from-[#0B1020]/75
+via-black/20
+to-transparent
       backdrop-blur-sm
       opacity-0
       group-hover:opacity-100
@@ -133,29 +201,83 @@ function Certificates() {
     "
   >
     <Eye
-      size={42}
+      size={38}
       className="text-white mb-2"
     />
 
-    <span className="text-white font-semibold">
-      View Certificate
-    </span>
+    <div
+className="
+px-5
+py-2.5
+
+rounded-full
+
+bg-white/20
+
+backdrop-blur-md
+
+border
+border-white/30
+
+text-white
+
+font-semibold
+
+text-sm
+
+transition-all
+
+group-hover:scale-110
+"
+>
+View Certificate
+</div>
 
   </div>
 
 </div>
 
-      <h3 className="text-2xl font-bold mb-4">
+<div className="p-8 flex flex-col flex-1">
+      <h3
+className="
+text-[28px]
+font-black
+tracking-[-0.04em]
+leading-tight
+text-gray-900
+mb-4
+min-h-[96px]
+"
+>
         {cert.title}
       </h3>
 
-      <p className="text-blue-400 mb-2">
+      <p
+className="
+text-[#4285F4]
+font-semibold
+mb-4
+"
+>
         {cert.issuer}
       </p>
 
-      <p className="text-gray-400">
-        {cert.year}
-      </p>
+      <span
+className="
+inline-flex
+w-fit
+px-4
+py-2
+rounded-full
+bg-gray-100
+text-gray-600
+font-semibold
+text-sm
+"
+>
+  {cert.year}
+</span>
+</div>
 
     </motion.div>
 
@@ -196,7 +318,13 @@ function Certificates() {
           w-12
           h-12
           rounded-full
-          bg-white/10
+          bg-white
+
+text-gray-700
+
+hover:bg-red-500
+
+hover:text-white
           hover:bg-red-500
           transition-all
           duration-300

@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 
 function GitHubStats() {
+  return null;
   return (
     <section
       id="github-stats"

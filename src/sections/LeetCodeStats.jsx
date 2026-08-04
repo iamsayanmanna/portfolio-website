@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 
 function LeetCodeStats() {
+  return null;
 
   const [stats, setStats] = useState(null);
 
