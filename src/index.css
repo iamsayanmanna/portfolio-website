@@ -617,6 +617,7 @@ nav{
 
 .contact-section{
   position:relative;
+  isolation: isolate;
 }
 
 .contact-section::before{
@@ -651,6 +652,11 @@ nav{
   filter:blur(140px);
 
   animation:contactMove2 12s ease-in-out infinite;
+}
+
+.contact-section::before,
+.contact-section::after{
+    pointer-events: none;
 }
 
 .contact-line{

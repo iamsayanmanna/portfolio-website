@@ -13,16 +13,18 @@ import {
   MessageSquare,
   FileText,
 } from "lucide-react";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 emailjs.init("kVenJPacmhp5WfCtB");
 
 function Contact() {
 
   const formRef = useRef();
+  const [loading, setLoading] = useState(false);
 
   const sendEmail = (e) => {
   e.preventDefault();
+  setLoading(true);
 
   console.log("Clicked");
 
@@ -34,10 +36,16 @@ function Contact() {
       "kVenJPacmhp5WfCtB"
     )
     .then(() => {
-      alert("✅ Message Sent Successfully!");
-      formRef.current.reset();
-    })
+
+setLoading(false);
+
+alert("✅ Message Sent Successfully!");
+
+formRef.current.reset();
+
+})
     .catch((error) => {
+      setLoading(false);
       console.log(error);
       alert("❌ Failed to send message.");
     });
@@ -685,8 +693,9 @@ duration-500
   shadow-[0_18px_55px_rgba(15,23,42,.08)]
   hover:border-[#4285F4]/30
 hover:shadow-[0_35px_90px_rgba(66,133,244,.18)]
-transition-all
-duration-700
+transition-[transform,box-shadow,border-color]
+duration-300
+will-change-transform
   "
 >
 
@@ -726,6 +735,12 @@ duration-700
   name="name"
     type="text"
     placeholder="Your Name"
+    required
+
+    autoComplete="off"
+spellCheck={false}
+autoCapitalize="words"
+
     className="
     w-full
     pl-14
@@ -745,7 +760,11 @@ duration-700
     focus:ring-4
     focus:ring-[#4285F4]/10
 
-    transition-all
+     transition-colors
+duration-200
+text-gray-900
+caret-[#4285F4]
+
     "
   />
 
@@ -770,6 +789,12 @@ duration-700
    name="email"
     type="email"
     placeholder="Your Email"
+    required
+
+    autoComplete="off"
+spellCheck={false}
+inputMode="email"
+
     className="
     w-full
     pl-14
@@ -789,7 +814,11 @@ duration-700
     focus:ring-4
     focus:ring-[#4285F4]/10
 
-    transition-all
+     transition-colors
+duration-200
+text-gray-900
+caret-[#4285F4]
+
     "
   />
 
@@ -814,6 +843,11 @@ duration-700
   name="subject"
     type="text"
     placeholder="Subject"
+    required
+
+    autoComplete="off"
+spellCheck={false}
+
     className="
     w-full
     pl-14
@@ -833,7 +867,10 @@ duration-700
     focus:ring-4
     focus:ring-[#4285F4]/10
 
-    transition-all
+     transition-colors
+duration-200
+text-gray-900
+caret-[#4285F4]
     "
   />
 
@@ -857,6 +894,11 @@ duration-700
   name="message"
     rows="6"
     placeholder="Write your message..."
+    required
+
+    autoComplete="off"
+spellCheck={false}
+
     className="
     w-full
 
@@ -879,7 +921,10 @@ duration-700
     focus:ring-4
     focus:ring-[#4285F4]/10
 
-    transition-all
+    transition-colors
+duration-200
+text-gray-900
+caret-[#4285F4]
     "
   />
 
@@ -888,7 +933,8 @@ duration-700
     {/* Button */}
 
    <button
-  type="submit"
+type="submit"
+disabled={loading}
   className="
   w-full
 
@@ -918,7 +964,7 @@ duration-700
   duration-500
   "
 >
-  Send Message →
+  {loading ? "Sending..." : "Send Message →"}
 </button>
 
 
