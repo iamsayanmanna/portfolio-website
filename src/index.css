@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "devicon/devicon.min.css";
 
 /* ==========================================================================
    RESET & BASE STYLES (Tailwind Friendly)
@@ -936,5 +937,228 @@ body {
 
   100%{
     transform: translateX(-50%);
+  }
+}
+
+
+
+/* ==========================================================================
+   GLOBAL RESPONSIVE SYSTEM
+   Safe Add-On — Existing Styles Preserved
+   ========================================================================== */
+
+/* ---------- Global viewport safety ---------- */
+
+html,
+body,
+#root {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+*,
+*::before,
+*::after {
+  min-width: 0;
+}
+
+img,
+svg,
+video,
+canvas {
+  max-width: 100%;
+}
+
+button,
+a,
+input,
+textarea,
+select {
+  max-width: 100%;
+}
+
+/* ---------- Responsive text wrapping ---------- */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+/* ---------- Mobile / Small screens ---------- */
+
+@media (max-width: 639px) {
+
+  section {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  /* Prevent fixed-width content from escaping viewport */
+  [class*="w-[1200px]"],
+  [class*="w-[1280px]"],
+  [class*="w-[1350px]"],
+  [class*="w-[1400px]"],
+  [class*="w-[1500px]"] {
+    max-width: calc(100vw - 32px) !important;
+  }
+
+  /* Large fixed minimum widths */
+  [class*="min-w-["] {
+    min-width: 0 !important;
+  }
+
+  /* Safer mobile buttons */
+  button,
+  a {
+    max-width: 100%;
+  }
+
+  /* Prevent oversized decorative elements from creating layout pressure */
+  .light-orb,
+  .about-orb,
+  .contact-section::before,
+  .contact-section::after {
+    max-width: 100vw;
+  }
+
+  /* Mobile navbar safety */
+  nav {
+    max-width: 100vw;
+  }
+
+  nav > div {
+    max-width: calc(100vw - 24px);
+  }
+
+  /* Testimonial slider stays inside viewport */
+  .testimonial-slider {
+    max-width: none;
+  }
+}
+
+/* ---------- Large mobile / tablet ---------- */
+
+@media (min-width: 640px) and (max-width: 1023px) {
+
+  section {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  [class*="min-w-["] {
+    min-width: 0;
+  }
+
+  nav {
+    max-width: 100vw;
+  }
+
+  nav > div {
+    max-width: calc(100vw - 32px);
+  }
+}
+
+/* ---------- Tablet / Laptop ---------- */
+
+@media (min-width: 768px) and (max-width: 1279px) {
+
+  section {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Prevent large decorative animations from affecting layout */
+  .light-orb,
+  .about-orb {
+    pointer-events: none;
+  }
+}
+
+/* ---------- Desktop ---------- */
+
+@media (min-width: 1280px) {
+
+  section {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+/* ---------- Very large displays ---------- */
+
+@media (min-width: 1536px) {
+
+  #root {
+    width: 100%;
+  }
+
+  section {
+    width: 100%;
+  }
+}
+
+/* ---------- Touch devices ---------- */
+
+@media (hover: none) and (pointer: coarse) {
+
+  /*
+   * Disable excessive hover scaling on touch devices.
+   * Existing desktop hover effects remain untouched.
+   */
+
+  .orbit:hover,
+  .about-tag:hover,
+  .project-card:hover {
+    transform: none;
+  }
+}
+
+/* ---------- Reduced motion accessibility ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .testimonial-slider {
+    animation: none !important;
+  }
+}
+
+/* ---------- Ultra-small phones ---------- */
+
+@media (max-width: 359px) {
+
+  section {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  nav > div {
+    max-width: calc(100vw - 16px);
   }
 }
