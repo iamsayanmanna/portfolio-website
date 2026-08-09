@@ -1,4 +1,6 @@
+import { motion } from "framer-motion";
 import { useEffect, useState, useRef } from "react";
+
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -76,8 +78,22 @@ useEffect(() => {
   { name: "More", link: "#more", id: "more" },
 ];
 
-  return (
-    <nav className="fixed top-5 left-0 right-0 z-50 flex justify-center px-4">
+return (
+  <motion.nav
+    initial={{
+      opacity: 0,
+      y: -24,
+    }}
+    animate={{
+      opacity: 1,
+      y: 0,
+    }}
+    transition={{
+      duration: 0.65,
+      ease: "easeOut",
+    }}
+    className="fixed top-5 left-0 right-0 z-50 flex justify-center px-4"
+  >
 
       <div
         className={`w-full max-w-[1280px] flex items-center justify-between px-10 py-1.5 rounded-[24px] border transition-all duration-300 ${
@@ -101,13 +117,15 @@ useEffect(() => {
           hover:text-[#4285F4]
           "
         >
-          <span
+<motion.span
+  data-navbar-logo="true"
   className="
   text-[1.85rem]
   font-black
   tracking-tight
   select-none
-  "
+  whitespace-nowrap
+"
 >
   <span className="text-[#4285F4]">S</span>
   <span className="text-[#EA4335]">a</span>
@@ -115,7 +133,7 @@ useEffect(() => {
   <span className="text-[#4285F4]">a</span>
   <span className="text-[#34A853]">n</span>
   <span className="text-[#EA4335]">.</span>
-</span>
+</motion.span>
         </a>
 
         {/* Desktop Menu */}
@@ -383,7 +401,7 @@ to-[#34A853]
         </div>
       )}
 
-    </nav>
+    </motion.nav>
   );
 }
 

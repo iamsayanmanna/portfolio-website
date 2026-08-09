@@ -5,13 +5,29 @@ import {
   useMotionValue,
   useTransform,
 } from "framer-motion";
-import { useEffect, useState } from "react";
 
-function Loader() {
-  const [loading, setLoading] = useState(true);
-  const [progress, setProgress] = useState(0);
 
-  const animatedProgress = useMotionValue(0);
+
+import {
+  useEffect,
+  useState,
+  useRef,
+} from "react";
+
+function Loader({
+  loading,
+  setLoading,
+}) {
+
+  
+ 
+const [progress, setProgress] = useState(0);
+const [logoExit, setLogoExit] = useState(false);
+const [logoTarget, setLogoTarget] = useState(null);
+
+const logoRef = useRef(null);
+
+const animatedProgress = useMotionValue(0);
 
 const roundedProgress = useTransform(
   animatedProgress,
@@ -53,31 +69,49 @@ const [greeting] = useState(
 });
 
       if (value === 100) {
-        clearInterval(interval);
+  clearInterval(interval);
 
-        setTimeout(() => {
-          setLoading(false);
-        }, 400);
-      }
+  const navbarLogo = document.querySelector(
+    '[data-navbar-logo="true"]'
+  );
+
+  const loaderLogo = logoRef.current;
+
+  if (navbarLogo && loaderLogo) {
+    const target = navbarLogo.getBoundingClientRect();
+    const current = loaderLogo.getBoundingClientRect();
+
+    setLogoTarget({
+      x: target.left + target.width / 2 - (current.left + current.width / 2),
+      y: target.top + target.height / 2 - (current.top + current.height / 2),
+      scale: target.width / current.width,
+    });
+  }
+
+  setLogoExit(true);
+
+  setTimeout(() => {
+  setLoading(false);
+}, 1000);
+}
     }, 120);
 
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <AnimatePresence>
+    <>
       {loading && (
         <motion.div
-          initial={{ opacity: 1 }}
-          exit={{
-  opacity: 0,
-  scale: 1.08,
-  filter: "blur(22px)",
-}}
+  initial={{ opacity: 1 }}
+  animate={{
+    opacity: loading ? 1 : 0,
+    filter: loading ? "blur(0px)" : "blur(22px)",
+  }}
           transition={{
-            duration: 0.7,
-            ease: "easeInOut",
-          }}
+  duration: 0.7,
+  ease: [0.22, 1, 0.36, 1],
+}}
           className="
           fixed
           inset-0
@@ -218,42 +252,53 @@ via-[#FBBC05]/10
 ))}
 
 
-          <div className="relative z-20 text-center">
+         
+  <div className="relative z-20 text-center">
 
             {/* Logo */}
 
-
-            <motion.h1
-              initial={{
-                opacity: 0,
-                y: 25,
-                scale: 0.85,
-              }}
-              animate={{
-  opacity: 1,
-  y: 0,
-  scale: [1, 1.04, 1],
-}}
-              transition={{
-  duration: 2,
-  repeat: Infinity,
-}}
-              className="
-              text-6xl
-              md:text-8xl
-              font-black
-              tracking-tight
-              select-none
-              "
-            >
-              <span className="text-[#4285F4]">S</span>
-              <span className="text-[#EA4335]">a</span>
-              <span className="text-[#FBBC05]">y</span>
-              <span className="text-[#4285F4]">a</span>
-              <span className="text-[#34A853]">n</span>
-              <span className="text-white">.</span>
-            </motion.h1>
-
+<motion.h1
+  ref={logoRef}
+  data-logo="loader-logo"
+  initial={{
+    opacity: 0,
+    y: 25,
+    scale: 0.85,
+  }}
+animate={
+  logoExit && logoTarget
+    ? {
+        opacity: 1,
+        x: logoTarget.x,
+        y: logoTarget.y,
+        scale: logoTarget.scale,
+      }
+    : {
+        opacity: 1,
+        x: 0,
+        y: 0,
+        scale: 1,
+      }
+}
+  transition={{
+    duration: 0.8,
+    ease: "easeOut",
+  }}
+  className="
+    text-6xl
+    md:text-8xl
+    font-black
+    tracking-tight
+    select-none
+  "
+>
+  <span className="text-[#4285F4]">S</span>
+  <span className="text-[#EA4335]">a</span>
+  <span className="text-[#FBBC05]">y</span>
+  <span className="text-[#4285F4]">a</span>
+  <span className="text-[#34A853]">n</span>
+  <span className="text-[#EA4335]">.</span>
+</motion.h1>
 
 
 
@@ -382,10 +427,12 @@ overflow-visible
 </motion.p>
 
           </div>
+         
         </motion.div>
       )}
-    </AnimatePresence>
+    </>
   );
+  
 }
 
 export default Loader;
