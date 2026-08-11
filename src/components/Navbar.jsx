@@ -265,42 +265,42 @@ hover:bg-blue-50
       href="#certificates"
       className="block px-4 py-3 rounded-2xl text-gray-700 hover:bg-blue-50 hover:text-[#4285F4] transition"
     >
-      🏆 Certifications
+       Certifications
     </a>
 
     <a
       href="#experience"
       className="block px-4 py-3 rounded-2xl text-gray-700 hover:bg-blue-50 hover:text-[#4285F4] transition"
     >
-      💼 Experience
+       Experience
     </a>
 
     <a
       href="#github-stats"
       className="block px-4 py-3 rounded-2xl text-gray-700 hover:bg-blue-50 hover:text-[#4285F4] transition"
     >
-      🐙 GitHub Stats
+       GitHub Stats
     </a>
 
     <a
       href="#leetcode"
       className="block px-4 py-3 rounded-2xl text-gray-700 hover:bg-blue-50 hover:text-[#4285F4] transition"
     >
-      ⚡ LeetCode Stats
+       LeetCode Stats
     </a>
 
     <a
       href="#testimonials"
       className="block px-4 py-3 rounded-2xl text-gray-700 hover:bg-blue-50 hover:text-[#4285F4] transition"
     >
-      ❤️ Testimonials
+       Testimonials
     </a>
 
     <a
       href="#blog"
       className="block px-4 py-3 rounded-2xl text-gray-700 hover:bg-blue-50 hover:text-[#4285F4] transition"
     >
-      ✍️ Blog
+       Blog
     </a>
   </div>
 )}
