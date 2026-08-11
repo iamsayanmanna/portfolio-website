@@ -83,37 +83,40 @@ shadow-sm backdrop-blur-md"
 </motion.span>
 
             {/* Heading */}
-            <h1
-className="
-text-[4rem]
-sm:text-[5rem]
-lg:text-[6rem]
-font-black
-tracking-[-0.06em]
-leading-[0.88]
-text-center
-lg:text-left
-select-none
+           <h1
+  className="
+  text-[3.5rem]
+  sm:text-[4.5rem]
+  md:text-[5rem]
+  lg:text-[5rem]
+  xl:text-[6rem]
+  font-black
+  tracking-[-0.06em]
+  leading-[0.88]
+  text-center
+  lg:text-left
+  select-none
+  whitespace-nowrap
 "
 >
   <span className="text-[#0F172A] drop-shadow-[0_2px_2px_rgba(255,255,255,.4)]">
-  Sayan
-</span>
+    Sayan
+  </span>
 
-<span
-className="
-ml-2
-bg-gradient-to-r
-from-[#4285F4]
-via-[#26A69A]
-to-[#34A853]
-bg-clip-text
-text-transparent
-drop-shadow-[0_3px_15px_rgba(52,168,83,.15)]
-"
->
-  Manna
-</span>
+  <span
+    className="
+    ml-2
+    bg-gradient-to-r
+    from-[#4285F4]
+    via-[#26A69A]
+    to-[#34A853]
+    bg-clip-text
+    text-transparent
+    drop-shadow-[0_3px_15px_rgba(52,168,83,.15)]
+    "
+  >
+    Manna
+  </span>
 </h1>
 
             {/* Subheading */}
@@ -217,28 +220,27 @@ hover:shadow-xl
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 max-w-xl mx-auto lg:mx-0 mt-2">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 max-w-[600px] mx-auto lg:mx-0 mt-2">
               <div
   className="
-  bg-white
-  border
-  border-gray-200
-  rounded-2xl
-  px-5
-py-5
-sm:px-6
+bg-white
+border
+border-gray-200
+rounded-2xl
+px-4
+py-4
+sm:px-5
 sm:py-5
-  text-center
-  
-  hover:-translate-y-2
-  hover:border-[#4285F4]
-  hover:shadow-xl
- hover:shadow-lg
-  transition-all
-  duration-300
-  cursor-pointer
-hover:scale-105
-  "
+text-center
+hover:-translate-y-2
+hover:border-[#4285F4]
+hover:shadow-xl
+hover:shadow-blue-500/20
+transition-all
+duration-300
+cursor-pointer
+hover:scale-[1.03]
+"
 >
      <h3 className="text-[2rem] font-extrabold">
   15+
@@ -247,26 +249,25 @@ hover:scale-105
 </div>
 
               <div
-  className="
-  bg-white
-  border
-  border-gray-200
-  rounded-2xl
-  px-5
-py-6
-sm:px-8
-sm:py-8
-  text-center
- 
-  hover:-translate-y-2
-  hover:border-[#4285F4]
-  hover:shadow-xl
-  hover:shadow-purple-500/20
-  transition-all
-  duration-300
-  cursor-pointer
-hover:scale-105
-  "
+ className="
+bg-white
+border
+border-gray-200
+rounded-2xl
+px-4
+py-4
+sm:px-5
+sm:py-5
+text-center
+hover:-translate-y-2
+hover:border-[#4285F4]
+hover:shadow-xl
+hover:shadow-purple-500/20
+transition-all
+duration-300
+cursor-pointer
+hover:scale-[1.03]
+"
 >
   <h3 className="text-[2rem] font-extrabold">
   2
@@ -276,25 +277,24 @@ hover:scale-105
 
               <div
   className="
-  bg-white
-  border
-  border-gray-200
-  rounded-2xl
-  px-5
-py-6
-sm:px-8
-sm:py-8
-  text-center
- 
-  hover:-translate-y-2
-  hover:border-[#4285F4]
-  hover:shadow-xl
-  hover:shadow-cyan-500/20
-  transition-all
-  duration-300
-  cursor-pointer
-hover:scale-105
-  "
+bg-white
+border
+border-gray-200
+rounded-2xl
+px-4
+py-4
+sm:px-5
+sm:py-5
+text-center
+hover:-translate-y-2
+hover:border-[#4285F4]
+hover:shadow-xl
+hover:shadow-cyan-500/20
+transition-all
+duration-300
+cursor-pointer
+hover:scale-[1.03]
+"
 >
   <h3 className="text-[2rem] font-extrabold">
   BCA

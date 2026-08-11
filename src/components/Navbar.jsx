@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { ChevronDown } from "lucide-react";
 import { useEffect, useState, useRef } from "react";
 
 
@@ -43,29 +44,39 @@ useEffect(() => {
 
 
 
-  useEffect(() => {
+useEffect(() => {
   const sections = ["home", "about", "skills", "projects", "contact"];
 
-  const handleActiveSection = () => {
-    const scrollPosition = window.scrollY + 150;
+  const observer = new IntersectionObserver(
+    (entries) => {
+      const visibleSections = entries
+        .filter((entry) => entry.isIntersecting)
+        .sort(
+          (a, b) =>
+            b.intersectionRatio - a.intersectionRatio
+        );
 
-    sections.forEach((section) => {
-      const element = document.getElementById(section);
-
-      if (
-        element &&
-        scrollPosition >= element.offsetTop &&
-        scrollPosition < element.offsetTop + element.offsetHeight
-      ) {
-        setActiveSection(section);
+      if (visibleSections.length > 0) {
+        setActiveSection(visibleSections[0].target.id);
       }
-    });
-  };
+    },
+    {
+      root: null,
+      rootMargin: "-20% 0px -55% 0px",
+      threshold: [0, 0.1, 0.25, 0.5, 0.75, 1],
+    }
+  );
 
-  window.addEventListener("scroll", handleActiveSection);
+  sections.forEach((section) => {
+    const element = document.getElementById(section);
+
+    if (element) {
+      observer.observe(element);
+    }
+  });
 
   return () => {
-    window.removeEventListener("scroll", handleActiveSection);
+    observer.disconnect();
   };
 }, []);
 
@@ -77,6 +88,8 @@ useEffect(() => {
   { name: "Contact", link: "#contact", id: "contact" },
   { name: "More", link: "#more", id: "more" },
 ];
+
+
 
 return (
   <motion.nav
@@ -152,26 +165,34 @@ return (
   <button
   onClick={() => setMoreOpen(!moreOpen)}
   className="
-    flex
-    items-center
-    gap-2
-    text-gray-700
-    hover:text-[#4285F4]
-    transition-all
-    duration-300
-  "
+flex
+items-center
+gap-2
+px-3
+py-2
+rounded-lg
+text-gray-700
+hover:text-[#4285F4]
+hover:bg-blue-50
+transition-all
+duration-300
+"
 >
   More
 
-  <span
-    className={`
-      transition-transform
-      duration-300
-      ${moreOpen ? "rotate-180" : ""}
-    `}
-  >
-    ⌄
-  </span>
+  <ChevronDown
+  size={18}
+  strokeWidth={2}
+  className={`
+    transition-transform
+    duration-300
+    ${
+      moreOpen
+        ? "rotate-180 text-[#4285F4]"
+        : "text-gray-500"
+    }
+  `}
+/>
 
 </button>
 
