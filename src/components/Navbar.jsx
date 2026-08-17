@@ -276,18 +276,24 @@ hover:bg-blue-50
     </a>
 
     <a
-      href="#github-stats"
-      className="block px-4 py-3 rounded-2xl text-gray-700 hover:bg-blue-50 hover:text-[#4285F4] transition"
-    >
-       GitHub Stats
-    </a>
+  href="https://github.com/iamsayanmanna"
+  target="_blank"
+  rel="noopener noreferrer"
+  onClick={() => setMoreOpen(false)}
+  className="block px-4 py-3 rounded-2xl text-gray-700 hover:bg-blue-50 hover:text-[#4285F4] transition"
+>
+  GitHub Stats
+</a>
 
     <a
-      href="#leetcode"
-      className="block px-4 py-3 rounded-2xl text-gray-700 hover:bg-blue-50 hover:text-[#4285F4] transition"
-    >
-       LeetCode Stats
-    </a>
+  href="https://leetcode.com/u/iamsayanmanna/"
+  target="_blank"
+  rel="noopener noreferrer"
+  onClick={() => setMoreOpen(false)}
+  className="block px-4 py-3 rounded-2xl text-gray-700 hover:bg-blue-50 hover:text-[#4285F4] transition"
+>
+  LeetCode Stats
+</a>
 
     <a
       href="#testimonials"
