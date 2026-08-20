@@ -17,9 +17,9 @@ const testimonials = [
   },
 
   {
-    name: "Rahul Sharma",
-    role: "Software Engineer",
-    company: "Developer Community",
+    name: "Nihal Gazi",
+    role: "Founder & CEO",
+    company: "KindSynapse",
     review:
       "His portfolio demonstrates clean UI design, responsive layouts and continuous improvement. I'm excited to see what he builds next.",
     badge: "Community",
