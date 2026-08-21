@@ -1,4 +1,3 @@
-import { Heart } from "lucide-react";
 
 function Footer() {
   return (
@@ -161,7 +160,7 @@ FULL STACK DEVELOPER
   items-center
   justify-between
 
-  gap-5
+  gap-3
   "
 >
 
@@ -169,16 +168,19 @@ FULL STACK DEVELOPER
     © {new Date().getFullYear()} Sayan Manna. All rights reserved.
   </p>
 
-  <div className="flex items-center gap-2 text-gray-500">
-
-    <span>Crafted with React • Tailwind CSS • Framer Motion</span>
-
-    <Heart
-      size={16}
-      className="fill-red-500 text-red-500"
-    />
-
-  </div>
+ <div
+  className="
+    text-center
+    md:text-right
+    text-sm
+    text-gray-500
+    leading-6
+  "
+>
+  <span>
+    Crafted with React • Tailwind CSS • Framer Motion
+  </span>
+</div>
 
 </div>
 

@@ -9,6 +9,7 @@ function Navbar() {
   const [activeSection, setActiveSection] = useState("home");
   const [moreOpen, setMoreOpen] = useState(false);
   const moreRef = useRef(null);
+  const mobileMoreRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,9 +25,17 @@ function Navbar() {
 
 useEffect(() => {
   const handleClickOutside = (event) => {
-    if (
+    const clickedInsideDesktopMore =
       moreRef.current &&
-      !moreRef.current.contains(event.target)
+      moreRef.current.contains(event.target);
+
+    const clickedInsideMobileMore =
+      mobileMoreRef.current &&
+      mobileMoreRef.current.contains(event.target);
+
+    if (
+      !clickedInsideDesktopMore &&
+      !clickedInsideMobileMore
     ) {
       setMoreOpen(false);
     }
@@ -88,6 +97,23 @@ useEffect(() => {
   { name: "Contact", link: "#contact", id: "contact" },
   { name: "More", link: "#more", id: "more" },
 ];
+
+const handleMobileSection = (sectionId) => {
+  setMoreOpen(false);
+
+  const section = document.getElementById(sectionId);
+
+  if (!section) return;
+
+  section.scrollIntoView({
+    behavior: "smooth",
+    block: "start",
+  });
+
+  setTimeout(() => {
+    setMenuOpen(false);
+  }, 300);
+};
 
 
 
@@ -384,24 +410,181 @@ hover:bg-blue-50
 
             {navItems.map((item, index) => (
 
-              <li key={index}>
+  <li
+  key={index}
+  ref={item.name === "More" ? mobileMoreRef : null}
+>
 
-                <a
-                  href={item.link}
-                  onClick={() => setMenuOpen(false)}
-                  className="
-                  text-gray-700
-                  hover:text-blue-600
-                  transition-all
-                  duration-300
-                  "
-                >
-                  {item.name}
-                </a>
+    {item.name === "More" ? (
 
-              </li>
+      <>
+        <button
+          onClick={() => setMoreOpen(!moreOpen)}
+          className="
+          w-full
+          flex
+          items-center
+          justify-between
+          text-gray-700
+          hover:text-blue-600
+          transition-all
+          duration-300
+          text-left
+          "
+        >
+          <span>More</span>
 
-            ))}
+          <ChevronDown
+            size={18}
+            strokeWidth={2}
+            className={`
+              transition-transform
+              duration-300
+              ${
+                moreOpen
+                  ? "rotate-180 text-[#4285F4]"
+                  : "text-gray-500"
+              }
+            `}
+          />
+        </button>
+
+        {moreOpen && (
+          <div
+            className="
+            mt-3
+            ml-3
+            pl-4
+            border-l
+            border-gray-200
+            flex
+            flex-col
+            gap-2
+            "
+          >
+
+           <button
+  type="button"
+  onClick={() => handleMobileSection("certificates")}
+  className="
+  w-full
+  text-left
+  py-2
+  text-gray-600
+  hover:text-[#4285F4]
+  transition
+  "
+>
+  Certifications
+</button>
+
+            <a
+              href="#experience"
+              onClick={() => {
+                setMenuOpen(false);
+                setMoreOpen(false);
+              }}
+              className="
+              py-2
+              text-gray-600
+              hover:text-[#4285F4]
+              transition
+              "
+            >
+              Experience
+            </a>
+
+            <a
+              href="https://github.com/iamsayanmanna"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => {
+                setMenuOpen(false);
+                setMoreOpen(false);
+              }}
+              className="
+              py-2
+              text-gray-600
+              hover:text-[#4285F4]
+              transition
+              "
+            >
+              GitHub Stats
+            </a>
+
+            <a
+              href="https://leetcode.com/u/iamsayanmanna/"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => {
+                setMenuOpen(false);
+                setMoreOpen(false);
+              }}
+              className="
+              py-2
+              text-gray-600
+              hover:text-[#4285F4]
+              transition
+              "
+            >
+              LeetCode Stats
+            </a>
+
+            <button
+  type="button"
+  onClick={() => handleMobileSection("testimonials")}
+  className="
+  w-full
+  text-left
+  py-2
+  text-gray-600
+  hover:text-[#4285F4]
+  transition
+  "
+>
+  Testimonials
+</button>
+
+            <button
+  type="button"
+  onClick={() => handleMobileSection("blog")}
+  className="
+  w-full
+  text-left
+  py-2
+  text-gray-600
+  hover:text-[#4285F4]
+  transition
+  "
+>
+  Blog
+</button>
+
+          </div>
+        )}
+
+      </>
+
+    ) : (
+
+      <a
+        href={item.link}
+        onClick={() => setMenuOpen(false)}
+        className="
+        text-gray-700
+        hover:text-blue-600
+        transition-all
+        duration-300
+        "
+      >
+        {item.name}
+      </a>
+
+    )}
+
+  </li>
+
+))}
 
             <a
               href="#contact"

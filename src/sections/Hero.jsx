@@ -1,4 +1,4 @@
-import profile from "../assets/Profile.png";
+import profile from "../assets/Profile_me.jpeg";
 import { motion } from "framer-motion";
 import resume from "../assets/resume.pdf";
 import { TypeAnimation } from "react-type-animation";
@@ -409,10 +409,10 @@ hover:scale-[1.03]
   alt="Sayan Manna"
   className="
   relative
-  w-[280px]
-  sm:w-[350px]
-  md:w-[420px]
-  lg:w-[500px]
+  w-[260px]
+  sm:w-[320px]
+  md:w-[380px]
+  lg:w-[440px]
   rounded-3xl
   border
   border-gray-300

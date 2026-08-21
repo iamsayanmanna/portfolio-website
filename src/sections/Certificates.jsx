@@ -68,31 +68,32 @@ function Certificates() {
     My Achievements
   </p>
 
-  <h2
+<h2
+  className="
+  text-[3rem]
+  sm:text-5xl
+  lg:text-7xl
+  font-black
+  tracking-[-0.04em]
+  leading-none
+  text-gray-900
+  whitespace-nowrap
+"
+>
+  Certifi
+  <span
     className="
-    text-5xl
-    sm:text-6xl
-    lg:text-7xl
-    font-black
-    tracking-[-0.04em]
-    leading-none
-    text-gray-900
+    bg-gradient-to-r
+    from-[#4285F4]
+    via-[#EA4335]
+    to-[#34A853]
+    bg-clip-text
+    text-transparent
     "
   >
-    Certifi
-    <span
-      className="
-      bg-gradient-to-r
-      from-[#4285F4]
-      via-[#EA4335]
-      to-[#34A853]
-      bg-clip-text
-      text-transparent
-      "
-    >
-      cations
-    </span>
-  </h2>
+    cations
+  </span>
+</h2>
 
   <div
     className="

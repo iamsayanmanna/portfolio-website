@@ -252,7 +252,7 @@ button, a {
 
 /* MOBILE RESPONSIVE ORBITS */
 
-@media (max-width: 640px){
+/* @media (max-width: 640px){
 
   @keyframes orbitOuter{
     from{
@@ -284,7 +284,48 @@ button, a {
     }
   }
 
+} */
+
+
+/* MOBILE RESPONSIVE ORBITS */
+
+@media (max-width: 640px){
+
+  @keyframes orbitOuter{
+    from{
+      transform:
+        rotate(0deg)
+        translateX(185px)
+        rotate(0deg);
+    }
+
+    to{
+      transform:
+        rotate(360deg)
+        translateX(185px)
+        rotate(-360deg);
+    }
+  }
+
+  @keyframes orbitInner{
+    from{
+      transform:
+        rotate(0deg)
+        translateX(165px)
+        rotate(0deg);
+    }
+
+    to{
+      transform:
+        rotate(360deg)
+        translateX(165px)
+        rotate(-360deg);
+    }
+  }
+
 }
+
+
 
 nav{
   min-height: 70px !important;
@@ -1160,5 +1201,25 @@ p {
 
   nav > div {
     max-width: calc(100vw - 16px);
+  }
+}
+
+/* =========================================
+   MOBILE SCROLLBAR FIX
+========================================= */
+
+@media (max-width: 639px) {
+  html {
+    scrollbar-width: none;
+  }
+
+  body {
+    scrollbar-width: none;
+  }
+
+  ::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    display: none;
   }
 }
