@@ -1223,3 +1223,134 @@ p {
     display: none;
   }
 }
+
+/* =========================================================
+   MOBILE SCROLL PERFORMANCE OPTIMIZATION
+   Existing design preserved
+   ========================================================= */
+
+@media (max-width: 639px) {
+
+  /* -------------------------------------------------------
+     1. Slow down the expensive orbit system
+     ------------------------------------------------------- */
+
+  .orbit-1,
+  .orbit-2,
+  .orbit-3,
+  .orbit-4,
+  .orbit-5,
+  .orbit-6,
+  .orbit-7,
+  .orbit-8 {
+    animation-duration: 28s !important;
+  }
+
+  .orbit-9,
+  .orbit-10,
+  .orbit-11,
+  .orbit-12,
+  .orbit-13,
+  .orbit-14,
+  .orbit-15,
+  .orbit-16 {
+    animation-duration: 26s !important;
+  }
+
+  /* Keep only the animated orbit transform composited */
+  .orbit {
+    will-change: transform;
+  }
+
+
+  /* -------------------------------------------------------
+     2. Disable non-essential infinite animations on mobile
+     ------------------------------------------------------- */
+
+  .about-card-left,
+  .about-card-right,
+  .skill-pill,
+  .skills-title,
+  .skills-description,
+  .project-card,
+  .project-icon,
+  .projects-title,
+  .projects-description,
+  .contact-title,
+  .contact-badge {
+    animation: none !important;
+  }
+
+
+  /* -------------------------------------------------------
+     3. Remove expensive blurred decorative layers
+     ------------------------------------------------------- */
+
+  .about-orb,
+  .light-orb,
+  .contact-section::before,
+  .contact-section::after {
+    display: none !important;
+  }
+
+
+  /* -------------------------------------------------------
+     4. Reduce backdrop blur cost on mobile
+     ------------------------------------------------------- */
+
+  .glass {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+
+  /* -------------------------------------------------------
+     5. Reduce expensive hover effects on touch devices
+     ------------------------------------------------------- */
+
+  .orbit:hover {
+    transform: none;
+  }
+
+  .about-tag:hover,
+  .project-card:hover,
+  .contact-badge:hover {
+    transform: none;
+    box-shadow: none;
+  }
+
+
+  /* -------------------------------------------------------
+     6. Reduce expensive project shine animation
+     ------------------------------------------------------- */
+
+  .project-card::after {
+    display: none;
+  }
+
+
+  /* -------------------------------------------------------
+     7. Reduce skill-pill animated effects
+     ------------------------------------------------------- */
+
+  .skill-pill::before,
+  .skill-pill::after {
+    display: none;
+  }
+
+
+  /* -------------------------------------------------------
+     8. Keep mobile scrolling native and smooth
+     ------------------------------------------------------- */
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  body {
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: none;
+  }
+
+}
